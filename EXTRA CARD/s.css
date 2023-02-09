@@ -1,0 +1,54 @@
+.card-group .card img{
+    width:30%;
+    height: 30%;
+}
+
+.card-group .card img {
+    width: 50%;
+    height: 54%;
+}
+
+.card-group{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.card-group>.card {
+    margin-bottom: var(--bs-card-group-margin);
+}
+.card {
+    --bs-card-spacer-y: 1rem;
+    --bs-card-spacer-x: 6rem;
+    --bs-card-title-spacer-y: 3.5rem;
+    --bs-card-title-color: ;
+    --bs-card-subtitle-color: ;
+    --bs-card-border-width: var(--bs-border-width);
+    --bs-card-border-color: rgb(0 0 0 / 18%);
+    --bs-card-border-radius: var(--bs-border-radius);
+    --bs-card-box-shadow: ;
+    --bs-card-inner-border-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
+    --bs-card-cap-padding-y: 3.5rem;
+    --bs-card-cap-padding-x: 1rem;
+    --bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.03);
+    --bs-card-cap-color: ;
+    --bs-card-height: ;
+    --bs-card-color: ;
+    --bs-card-bg: #c47070;
+    --bs-card-img-overlay-padding: 4rem;
+    --bs-card-group-margin: 0.75rem;
+    position: relative;
+    display: flex;
+    min-width: 0;
+    height: var(--bs-card-height);
+    word-wrap: break-word;
+    background-color: var(--bs-card-bg);
+    background-clip: border-box;
+    border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+    border-radius: var(--bs-card-border-radius);
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: center;
+    align-items: center;
+}

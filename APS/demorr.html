@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">.
+	<meta name= "viewport" content = "width=device-width, initial scale=1">
+	<meta name = "description" content = "implementations of scheduling Algorithms">
+	<meta name = "keyword" content="4 types of Scheduling Algorithms and their implementations">
+	<meta name = "author" content = "Darshan, Aniket, Rahil, Rashmi, Vaidik">
+	<title>Scheduling Algorithms| Welcome</title>
+
+	<link rel = "stylesheet" href = "cssR/styleRF.css">	
+</head>
+
+<body>
+
+	<header>
+		<div class = "container">
+			<div id = "brand_logo">
+				<!-- <img src="./img/logo.png"> -->
+			</div>
+			<div id = "branding">	
+				<h1><span class = "highlight">OS </span><span class = "highlight_2">Virtual Lab</span></h1>
+			</div>
+			<nav>
+				<ul>
+					<li class = "current"><a href = "index.html">HOME</a></li> 
+					<li><a href = "about.html">ABOUT</a></li> 
+					<!-- <li><a href = "services.html">SERVICES</a></li>  -->
+				</ul>
+			</nav>
+		</div>
+	</header>
+    <section class = "container">
+        <form id = "rrform">
+			<div class = "msg">
+				<div>
+					<label for="qtinput">Enter quantum time: </label><br>
+					<input type = "text" id ="qtinput"><br>
+				</div>
+				<div>
+					<label for="atimeinput">Enter arrival time: </label><br>
+					<input type = "text" id ="atimeinput"><br>
+				</div>
+				<div>
+					<label for="btimeinput">Enter quantum time: </label><br>
+					<input type = "text" id ="btimeinput"><br>
+				</div>
+				<button>add</button>
+			</div>	
+        </form>
+		<table id = "rr_table">
+			<tr>
+				<th>Arrival Time</th>
+				<th>Burst Time</th>
+			</tr>
+		</table>
+	</section>
+	<script src="rralgo.js"></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

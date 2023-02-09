@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scheduling Algorithms</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="cssA/style.css">
+
+  <link rel="stylesheet" href="cssA\styleNEW.css">
+
+ <!-- <link rel="stylesheet" href="cssA/mainpage.css"> -->
+<!-- 
+ <link rel="stylesheet" href="cssA/stylerr.css"> -->
+<!-- 
+ <link rel="stylesheet" href="cssA/video.css"> -->
+
+
+  <link rel="icon" type="image/x-icon" href="HTM/img/logo4.jpg">
+ <!-- <link rel="stylesheet" href="cssA/cardnew.css">  -->
+  <!-- <link rel="stylesheet" href="css/card.css"> -->
+
+</head>
+
+<body>
+  <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand text-capitalize" href="#">OS VIRTUAL LAB</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-capitalize" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-capitalize" href="#">About Us</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-capitalize" href="https://en.wikipedia.org/wiki/Operating_system">Explore More</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav> -->
+
+
+  <!-- header carousel starts here -->
+  <header>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <video class="img-fluid" autoplay loop muted>
+            <source src="HTM/video/video1.mp4" type="video/mp4" />
+          </video>
+          <div class="carousel-caption d-none d-md-block">
+            <h1>SCHEDULING ALGORITHMS</h1>
+            <p>A Process Scheduler schedules different processes to be assigned to the CPU based on particular
+              scheduling algorithms.
+              These algorithms are either non-preemptive or preemptive. Non-preemptive algorithms are designed so that
+              once a process enters the running state, it cannot be preempted until it completes its allotted time,
+              whereas the preemptive scheduling is based on priority where a scheduler may preempt a low priority
+              running process anytime when a high priority process enters into a ready state.
+            </p>
+
+          </div>
+        </div>
+        <div class="carousel-item">
+          <video class="img-fluid" autoplay loop muted>
+            <source src="video/video1.mp4" type="video/mp4" />
+          </video>
+          <div class="carousel-caption d-none d-md-block">
+            <h1>WHAT IS THE NEED?</h1>
+            <p>Process scheduling allows OS to allocate a time interval of CPU execution for each process. Another
+              important reason for using a process scheduling system is that it keeps the CPU busy all the time. This
+              allows you to get the minimum response time for programs.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <video class="img-fluid" autoplay loop muted>
+            <source src="video/video1.mp4" type="video/mp4" />
+          </video>
+          <div class="carousel-caption d-none d-md-block">
+            <h1>VARIOUS ADVANTAGES</h1>
+            <p>Allows efficient and timely distribution of information to relevant users.
+              Ensures that heavy querying is not done during peak hours.
+              Minimizes the manual intervention by automating the processes.
+              Enables users to analyze the changes in the data in real- time.
+              Streamlines communication, helps control costs and helps avoid scheduling conflicts.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </header>
+
+
+  <!-- About us Section starts -->
+  <!-- <section class="main-heading my-5 bg-dark text-white">
+
+    <div class="text-center">
+      <h3 class="display-4">Round Robin Algorithm</h3>
+      <hr class="w-50  mx-auto" />
+    </div>
+    <div class="container ">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-12 col-xxl-6">
+          <figure>
+            <img src="roundrobin.png" alt="images" class="img-fluid about_img  bg-dark"></img>
+          </figure>
+        </div>
+        <div class="col-lg-6 col-md-6 col-12 col-xxl-6">
+          <h3>Intro</h3>
+          <p class="text-justify">Round Robin is a CPU scheduling algorithm where each process is assigned a fixed time
+            slot in a cyclic way.
+            It is basically the preemptive version of First come First Serve CPU Scheduling algorithm.
+            Round Robin CPU Algorithm generally focuses on Time Sharing technique.
+            The period of time for which a process or job is allowed to run in a pre-emptive method is called time
+            quantum.
+            Each process or job present in the ready queue is assigned the CPU for that time quantum, if the execution
+            of the process is completed during that time then the process will end else the process will go back to the
+            waiting table and wait for its next turn to complete the execution.</p>
+          <a href="https://www.geeksforgeeks.org/program-for-round-robin-scheduling-for-the-same-arrival-time/"
+            class="btn btn-info" role="button">Info</a>
+
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="text-center">
+          <h3 class="display-4">Banker's Algorithm</h3>
+          <hr class="w-50  mx-auto" />
+        </div>
+        <div class="col-lg-6 col-md-6 col-12 col-xxl-6">
+          <h3>Intro</h3>
+          <p class="text-justify">The banker's algorithm is a resource allocation and deadlock avoidance algorithm that
+            tests for safety by simulating the allocation for predetermined maximum possible amounts of all resources,
+            then makes an “s-state” check to test for possible activities, before deciding whether allo
+            cation should be allowed to continue.</p>
+          <a href="https://www.geeksforgeeks.org/bankers-algorithm-in-operating-system-2/" class="btn btn-info"
+            role="button">Info</a>
+
+        </div class="row">
+        <div class="col-lg-6 col-md-6 col-12 col-xxl-6">
+
+          <figure>
+
+            <img src="roundrobin.png" alt="images" class="img-fluid about_img  bg-dark"></img>
+          </figure>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="text-center">
+          <h3 class="display-4">SCAN/C-SCAN Algortihm</h3>
+          <hr class="w-50  mx-auto" />
+        </div>
+        <div class="col-lg-6 col-md-6 col-12 col-xxl-6">
+          <figure>
+            <img src="roundrobin.png" alt="images" class="img-fluid about_img  bg-dark"></img>
+          </figure>
+        </div>
+        <div class="col-lg-6 col-md-6 col-12 col-xxl-6">
+          <h2>Intro</h2>
+          <p class="text-justify-center">SCAN Disk Scheduling Algorithm is also known as Elevator algorithm. In this,
+            head or pointer can move in both the direction i.e., disk arm starts to move from one end of the disk to the
+            other end servicing all the requests until it reaches to the other end of the disk. After reaching the other
+            end, head movement direction is reversed and further continues servicing the requests.</p>
+          <p class="text-justify">In C-SCAN disk scheduling algorithm, the only difference with respect to SCAN
+            algorithm is that, it is designed to provide more uniformity in waiting time. In this, head or pointer works
+            in a single direction i.e., it scans for the requests all the way to a direction and once it reaches the
+            end, it jumps back to another end and services the requests in the same direction unlike, SCAN does it in
+            both reversed and forward direction.</p>
+          <a href="https://www.geeksforgeeks.org/difference-between-scan-and-cscan-disk-scheduling-algorithms/"
+            class="btn btn-info" role="button">Info</a>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="text-center">
+          <h3 class="display-4">MRU Algorithm</h3>
+          <hr class="w-50  mx-auto" />
+        </div>
+        <div class="col-lg-6 col-md-6 col-12 col-xxl-6">
+          <h3>Intro</h3>
+          <p class="text-justify">In an operating system that uses paging for memory management, a page replacement
+            algorithm is needed to decide which page needs to be replaced when a new page comes in.
+            MRU stands for 'most recently used'. When you access the data in the block, the associated block will go
+            into the MRU end of the managed list. It is like keeping the type of greeting cards most people liked in the
+            prime visible area for delightful customer experience.</p>
+          <a href="https://www.geeksforgeeks.org/page-replacement-algorithms-in-operating-systems/" class="btn btn-info"
+            role="button">Info</a>
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-12 col-xxl-6">
+          <figure>
+            <img src="roundrobin.png" alt="images" class="img-fluid about_img  bg-dark"></img>
+          </figure>
+
+        </div>
+      </div>
+
+    </div>
+
+
+  </section> -->
+
+
+  <div class="container">
+    <div class="boxes">
+      <h2>ALGORITHMS</h2>
+      <div class="box box1">
+        <img src="RAH/img/roundrobin.png" alt="image">
+        <h3>ROUND ROBIN  ALGORITHM</h3>
+        
+        <p>Round-robin is an algorithm employed by process and network schedulers in computing. As the term is generally
+          used,
+          time slices are assigned to each process in equal portions and in circular order, handling all processes
+          without priority.
+        </p>
+        <a href="DAR/textmew.html" class="btn neon-button role=" button">Explore</a>
+        <a href="ROUNDROBINVIDEO.HTML" class="btn neon-button role=" button">Video</a>
+        <a href="roundrobin.html" class="btn neon-button role=" button">Demo</a>
+      </div>
+
+      <div class="box" class="box1">
+       
+        <img src="RAH/img/bankersalgo.png" alt="image">
+        <h3>BANKER'S ALGORITHM FOR DEADLOCK  ALGORITHM</h3>
+        <p>It is a banker algorithm, which is used to avoid deadlock and allocate resources safely to each process in
+          the computer system.
+          As the name suggests, it is used mainly in banking system, to determine if a loan can be sanctioned to a
+          person or not.
+        </p>
+        <a href="DAR/textmew.html" class=" btn neon-button role=" button">Explore</a>
+        <a href="ROUNDROBINVIDEO.HTML" class="btn neon-button role=" button">Video</a>
+        <a href="roundrobin.html"  class="btn neon-button role=" button">Demo</a>
+      </div>
+
+      <div class="box" class="box3">
+        <img src="RAH/img/DSA.png" alt="image">
+        <h3>SCAN/C-SCAN DISK SCHEDULING  ALGORITHM</h3>
+        <p>A Process makes the I/O requests to the operating system to access the disk. Disk Scheduling Algorithm
+          manages those requests and decides the order of the disk access given to the requests.</p>
+        <a href="DAR/textmew.html" class="btn neon-button role=" button">Explore</a>
+        <a href="ROUNDROBINVIDEO.HTML" class="btn neon-button role=" button">Video</a>
+        <a href="roundrobin.html"  class="btn neon-button role=" button">Demo</a>
+      </div>
+
+      <div class="box" class="box4">
+        <img src="RAH/img/mru.png" alt="image">
+        <h3>MRU PAGE REPLACEMENT ALGORITHM</h3>
+        <p>Page replacement algorithms decide which memory pages to page out, sometimes called swap out, or write to
+          disk, when a page of memory needs to be allocated. MRU is considered an optimal page replacement algo</p>
+        <a href="DAR/textmew.html"  class="btn neon-button role=" button">Explore</a>
+        <a href="ROUNDROBINVIDEO.HTML" class="btn neon-button role=" button">Video</a>
+        <a href="roundrobin.html"  class="btn neon-button role=" button">Demo</a>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+  <!-- <div class="container">
+    <div class="card">
+      <div class="face face1">
+        <div class="content">
+          <h4>Round RObin</h4>
+          <img src="RAH/img/roundrobin.png">
+          <p class="text-justify-center">Round-robin is an algorithm employed by process and network schedulers in computing. As the term is
+            generally
+            used,
+            time slices are assigned to each process in equal portions and in circular order, handling all processes
+            without priority.</p>
+          <a href="DAR/text.html" class="btn box_button role=" button">Explore</a>
+          <a href="ROUNDROBINVIDEO.HTML" class="btn box_button1 role=" button">Video</a>
+          <button class="box_button2">Demo</button>
+        </div>
+      </div>
+      <div class="face face2">
+        <h3>ROUND ROBIN</h3>
+      </div>
+    </div>
+    <div class="card">
+      <div class="face face1">
+        <div class="content">
+          <h4>Bankers Algorithm</h4>
+          <img src="RAH/img/bankersalgo.png">
+          <p class="text-justify-center">It is a banker algorithm, which is used to avoid deadlock and allocate resources safely to each process in
+            the computer system.
+            As the name suggests, it is used mainly in banking system, to determine if a loan can be sanctioned to a
+            person or not.</p>
+          <a href="DAR/text.html" class="btn box_button role=" button">Explore</a>
+          <a href="ROUNDROBINVIDEO.HTML" class="btn box_button1 role=" button">Video</a>
+          <button class="box_button2">Demo</button>
+        </div>F
+      </div>
+      <div class="face face2">
+        <h3>Bankers Algorithm</h3>
+      </div>
+    </div>
+    <div class="card">
+      <div class="face face1">
+        <div class="content">
+          <h4>SCAN/c-cscan</h4>
+          <img src="RAH/img/DSA.png">
+          <p class="text-justify-center">A Process makes the I/O requests to the operating system to access the disk. Disk Scheduling Algorithm
+            manages those requests and decides the order of the disk access given to the requests.</p>
+          <a href="DAR/text.html" class="btn box_button role=" button">Explore</a>
+          <a href="ROUNDROBINVIDEO.HTML" class="btn box_button1 role=" button">Video</a>
+          <button class="box_button2">Demo</button>
+        </div>
+      </div>
+      <div class="face face2">
+        <h3>SCAN/c-cscan</h3>
+    
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="face face1">
+        <div class="content">
+          <h4> MRU ALGO </h4>
+          <img src="RAH/img/mru.png">
+          <hr />
+          <p class="text-justify-center">Page replacement algorithms decide which memory pages to page out, sometimes called swap out, or write to
+            disk, when a page of memory needs to be allocated. MRU is considered an optimal page replacement algo</p>
+          <a href="DAR/text.html" class="btn box_button role=" button">Explore</a>
+          <a href="ROUNDROBINVIDEO.HTML" class="btn box_button1 role=" button">Video</a>
+          <button class="box_button2">Demo</button>
+        </div>
+      </div>
+      <div class="face face2">
+        <h3>MRU</h3>
+      
+      </div>
+    </div>
+  </div>
+
+ -->
+
+
+  <footer>
+    <p>PDEU CSE, Copyright &copy; 2017</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
