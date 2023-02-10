@@ -2,9 +2,9 @@ body{
 	/*font-family: Arial, Helvetica, sans-serif;
 	font-size: 15px;
 	line-height: 1.5;
-
 	/* same as above */
-    background: linear-gradient(45deg, rgb(0, 0, 0), #0a0909);
+    background: black;
+	background-image: url(img/navyblue.png);
 	overflow-x: hidden;
 	font: 15px/1.5 Arial, Helvetica, sans-serif;
 	padding:0;
@@ -14,7 +14,7 @@ body{
 
 /* Global */
 .container{
-	width: 85%;
+	width: 100%;
 	margin: auto;
 	/*scroll bar does not appear if some content goes outside of the container div */
 	overflow-x: hidden;
@@ -26,7 +26,7 @@ body{
 
 .dark{
 	padding:15px;
-	background:#35424a;
+	background:#000000;
 	color:#ffffff;
 	margin-top:10px;
 	margin-bottom: 10px;
@@ -106,30 +106,34 @@ button {
 }
 
 .box {
+	border: white 3px solid;
     width: 950px;
-    height: 457px;
-    background: linear-gradient(5deg, rgb(1, 0, 0), #636569);
-	
-    text-align: center;
+    height: 500px;
+	background-image: url(img/TextPage.jpg);
+    filter: contrast(120%);
+	text-align: center;
 	color: white;
-    padding-left: 20px;
+    padding-left: 30px;
+	padding-right: 30px;
     margin-left: auto;
-    margin-bottom: 54px;
-    box-shadow: rgb(237 237 237) 0px 0px 33px;
-    border-radius: 52px;
+    margin-bottom: 20px;
+    box-shadow:inset 3px 3px 3px 3px white;
+    border-radius: 20px;
     display: flex;
     flex-flow: row-reverse wrap;
     align-items: center;
-    padding-top: -10px;
+    padding-top: 5px;
     place-content: space-around;
     flex-direction: row-reverse;
     align-content: center;
     justify-content: space-evenly;
 }
+
+
 .box_button {
-    background-color: #30da47;
+    background-color: #000000;
     border: 3px solid black;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     padding: 13px 32px;
     text-align: center;
     text-decoration: none;
@@ -160,7 +164,7 @@ button {
 }
 
 .box_button2 {
-    background-color: #dab330;
+    background-color: #30da5a;
     border: 3px solid black;
     color: rgb(9, 8, 8);
     padding: 13px 32px;
@@ -231,8 +235,8 @@ aside#sidebar .quote input, aside#sidebar .quote textarea{
 footer{
 	padding: 20px;
 	margin-top:50px;
-	color:#050404;
-	background-color:#fff6f6;
+	color:#e2e1e1;
+	/* background-image: url(img/navyblue.png); */
 	text-align:center;
 }
 
@@ -272,107 +276,52 @@ footer{
 		display: flex;
 		flex-direction: column;
 		border-radius: 152px;
-		border: 3px solid black;
+		
 	}
-
-
-  
-
-	/* carousel */
-
-	/* *{
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	}
-	.container{
-		width: 100%;
-		height: 100vh;
-		position: relative;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-	
-	.container .slider{
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
-	
-	
-	.container ul{
-		position: absolute;
-		bottom: 30px;
-		left: 50%;
-		transform: translateX(-50%);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		z-index: 20;
-	}
-	
-	.container ul li{
-		list-style: none;
-		cursor: pointer;
-		margin: 10px;
-	}
-	
-	
-	.container ul li video{
-		width: 200px;
-		transition: all 0.3s;
-	}
-	.container ul li video:hover{
-		transform: scale(1.1);
-	}
-	
-	video{
-		width: 100%;
-		height: 100%;
-	} */
+   
 
 
 	.neon-button {
 		display: inline-block;
 		padding: 1em 2em;
-		background-color: transparent;
-		border: 2px solid rgb(75, 68, 218);
-		color: rgb(75, 68, 218);
+		background-color: blue;
+		border: 2px solid rgb(255, 255, 255);
+		color: rgb(253, 253, 253);
 		text-transform: uppercase;
 		letter-spacing: 2px;
 		font-weight: bold;
-		box-shadow: 0 0 10px rgb(75, 68, 218), 0 0 20px rgb(75, 68, 218), 0 0 30px rgb(75, 68, 218), 0 0 40px rgb(75, 68, 218);
+		
 		border-radius: 10px;
 		transition: all 0.5s;
 	  }
 	   .neon-button:hover {
 		transform: translateY(-10px);
-		box-shadow: 0 0 10px rgb(190, 202, 12), 0 0 20px rgb(190, 202, 12), 0 0 30px rgb(190, 202, 12), 0 0 40px #e0cc1e;
-		border: 2px solid rgb(208, 208, 11);
-		color: #bbbb02;
+		box-shadow: 0 0 10px rgb(25, 12, 202), 0 0 20px rgb(15, 12, 202), 0 0 30px rgb(12, 25, 202), 0 0 40px #2b1ee0;
+		border: 2px solid rgb(41, 11, 208);
+		color: #fefeff;
 	  }
 
 	  p {
+        color: #fbfbfc;
 		margin-top: 0;
 		font-size: large;
 		margin-bottom: 1.2rem;
 		font-weight: 700;
 	}
 
+	p:hover{
+		box-shadow: #e2e1e1;
+	}
 
  .h3, h3 {
     font-size: 1.75rem;
     font-weight: 900;
-	padding-top: 8px;
-    color: yellow;
+    color: rgb(255, 255, 255);
 }
 
 .h2, h2 {
     font-size: 5rem;
     font-weight: bolder;
     text-align: center;
-    color: rgb(255, 255, 250);
+    color: rgb(251, 250, 255);
 }
