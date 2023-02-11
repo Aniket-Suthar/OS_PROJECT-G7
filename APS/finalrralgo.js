@@ -1,4 +1,7 @@
 
+
+
+
 class ProcessStruct {
     constructor(pid, at, bt, ct, wt, start_time, tat, rt, bt_remaining) {
         this.pid = pid;

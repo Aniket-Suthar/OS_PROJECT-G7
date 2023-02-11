@@ -1,0 +1,60 @@
+.avg_output {
+    display: grid;
+    place-items: center;
+    float: left;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+}
+
+.text-capitalize {
+    text-transform: capitalize!important;
+    font-weight: bolder;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0px;
+    font-family: inherit;
+    font-size: large;
+    line-height: inherit;
+    padding: 3px 93px;
+}
+
+
+
+label {
+    display: inline-block;
+    padding-left: 0px;
+    font-size: larger;
+    font-weight: bold;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    color: rgb(23, 140, 19);
+    line-height: inherit;
+    font-size: larger;
+    font-weight: bold;
+    padding: 3px 93px;
+}
+
+#del{
+    margin-left: 21rem;
+    width: 20vw;
+    font-weight: bolder;
+  
+}
+
+#add_row{
+    margin-left: 6rem;
+    width: 20vw;
+    font-weight: bolder;
+}
+
+
+#exe{
+    width: 20vw;
+    font-weight: bolder;
+}

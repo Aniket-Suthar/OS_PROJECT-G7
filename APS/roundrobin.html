@@ -1,76 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<title>Round Robin Demo</title>
+	<title>ROUND ROBIN</title>
 
-	<link rel = "stylesheet" href = "cssA/stylerr.css">	
 	<link rel="icon" type="image/x-icon" href="HTM/img/logo4.jpg">
+
+	<link rel="stylesheet" href="cssA/rrcss.css">
+
+
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
-<body>
-<!-- 
-	<header>
-		<div class = "container">
-			<div id = "brand_logo"> -->
-				<!-- <img src="./img/logo.png"> -->
-			<!-- </div>
-			<div id = "branding">	
-				<h1><span class = "highlight">OS </span><span class = "highlight_2">Virtual Lab</span></h1>
-			</div>
-			<nav>
-				<ul>
-					<li class = "current"><a href = "index.html">HOME</a></li> 
-					<li><a href = "about.html">ABOUT</a></li>  -->
-					<!-- <li><a href = "services.html">SERVICES</a></li>  -->
-				<!-- </ul>
-			</nav>
+<body style="color: white;background:url(cssA/img/navyblue.png)">
+	<div class="container mt-4">
+		<div class="text-center">
+			<h1 class="display-5 mb-5 text-capitalize">ROUND ROBIN ALGORITHM</h1>
 		</div>
-	</header> -->
-    <div class = "container">
-			<form class = "rrform">
-				<div>
-					<label for="qtinput">Enter quantum time: </label><br>
-					<input type = "text" id ="qtinput"><br>
-					<label for="atimeinput">Enter arrival time: </label><br>
-					<input type = "text" id ="atimeinput"><br>
-					<label for="btimeinput">Enter burst time: </label><br>
-					<input type = "text" id ="btimeinput"><br>
+		<div class="main row justify-content-center">
+			<form action="" class="rr_form row justify-content-center mb-4" autocomplete="off">
+
+				<div class="col- col-md-8   mb-4">
+					<label for="quantum">Quantum Time :</label>
+					<input class="form-control" id="qtinput" type="number" placeholder="Enter the quantum time">
 				</div>
-				<button type="button" id = "add_row">Add Process</button><br>
-				<button  type="button" id = "del_row">Delete Process</button><br>
-				<button  type="button" id = "exe">Execute</button><br>
+
+				<div class="col- col-md-8 mb-4">
+					<label for="arrival">Arrival Time :</label>
+					<input class="form-control" id="atimeinput" type="number" placeholder="Enter the arrival time">
+				</div>
+
+				<div class="col- col-md-8 mb-4">
+					<label for="burst">Burst Time :</label>
+					<input class="form-control" id="btimeinput" type="number" placeholder="Enter the burst time">
+				</div>
+
+				<div class="col- col-md-8 ">
+					<button class="btn btn-success add-btn" id="add_row" type="submit">Add Process</button>
+					<button class="btn btn-danger add-btn" id="exe" type="submit">Execute</button>
+				</div>
+
 			</form>
-		<aside id = "rrtable">
-			<div class = "output">
-				<h1>Output</h1>
-				<table id = "rr_table">
-					<tr>
-						<th>Process no.</th>
-						<th>Arrival Time</th>
-						<th>Burst Time</th>
-						<th>Completion Time</th>
-						<th>Turn Around Time</th>
-						<th>Waiting Time</th>
-						<th>Response Time</th>
-					</tr>
+
+			<div class="col-10 col-md-10 mt-5">
+				<h1 class="mb-5 text-center"><strong>INPUT TABLE</strong></h1>
+				<table
+					class="rr_table table table-striped table-success table-hover table-bordered border-success border border-3"
+					id="rr_table">
+					<thead>
+						<tr>
+							<th>Process no.</th>
+							<th>Arrival time</th>
+							<th>Burst time</th>
+							<th>Action</th>
+						</tr>
+					</thead>
 				</table>
-				<div class = "avg_output">
-					<label for="avg_ct">Average Completion Time: </label><br>
-					<input type = "text" id ="avg_ct" readonly><br>
-					<label for="avg_tat">Average Turn Around Time: </label><br>
-					<input type = "text" id ="avg_tat" readonly><br>
-					<label for="avg_rt">Average Response Time: </label><br>
-					<input type = "text" id ="avg_rt" readonly><br>
-					<label for="avg_wt">Average Waiting Time: </label><br>
-					<input type = "text" id ="avg_wt" readonly><br>
+			</div>
+
+
+			<div class="output col-10 col-md-10 mt-5">
+				<h1 class="mb-5 text-center"><strong>OUTPUT TABLE</strong></h1>
+				<div class="col-10 col-md-8 mb-4">
+					<button class="btn btn-warning add-btn" id="del">CLICK HERE TO CLEAR</button>
+				</div>
+				<table
+					class="rr_table table table-striped table-success table-hover table-bordered border-success border border-3"
+					id="rr_table2">
+					<thead>
+						<tr>
+							<th>Process no.</th>
+							<th>Completion Time</th>
+							<th>Turn Around Time</th>
+							<th>Waiting Time</th>
+							<th>Response Time</th>
+
+						</tr>
+					</thead>
+					<tbody id="rr_table2">
+						<tr>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+
+			<div class="avg_output row justify-content-center">
+				<h1 class="mb-5 mt-1 text-center"><strong>OTHER DETAILS</strong></h1>
+				<div class="avg_output">
+					<div class="col-10 col-md-8 mb-4">
+						<label for="avg_ct">Average Completion Time:</label>
+						<input id="avg_ct" type="text" readonly>
+					</div>
+
+					<div class="col-10 col-md-8 mb-4">
+						<label for="avg_tat">Average Turn Around Time:</label>
+						<input id="avg_tat" type="text" readonly>
+					</div>
+
+					<div class="col-10 col-md-8 mb-4">
+						<label for="avg_rt">Average Response Time:</label>
+						<input id="avg_rt" type="text" readonly>
+					</div>
+
+					<div class="col-10 col-md-8 mb-4">
+						<label for="avg_wt">Average Waiting Time:</label>
+						<input id="avg_wt" type="text" readonly>
+					</div>
+
+					<div class="col-10 col-md-8 mb-4">
+						<label for="thrpt">Throughput: </label>
+						<input id="thrpt" type="text" readonly>
+					</div>
+
+					<div class="col-10 col-md-8 mb-4">
+						<label for="cpu">CPU Utilization : </label>
+						<input id="cpu" type="text" readonly>
+					</div>
+
+
+
 				</div>
 			</div>
-		</aside>
+		</div>
 	</div>
+
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+		integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+		crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+		integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+		crossorigin="anonymous"></script>
+
 	<script src="rralgo.js"></script>
 </body>
+
 </html>
