@@ -158,5 +158,6 @@ int main()
   cout << "\nAverage Response Time= " << (float)sum_rt / n;
   cout << "\nThroughput= " << n / (float)length_cycle;
   cout << "\nCPU Utilization(Percentage)= " << cpu_utilization * 100;
+  cout <<"\n";
   return 0;
 }

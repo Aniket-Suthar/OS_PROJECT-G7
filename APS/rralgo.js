@@ -30,7 +30,7 @@ let table = document.querySelector('table');
 let qtInput = document.querySelector('#qtinput');
 let atInput = document.querySelector('#atimeinput');
 let btInput = document.querySelector('#btimeinput');
-let delInput = document.querySelector('#del_row');
+let delInput = document.querySelector('#delete');
 let exeInput = document.querySelector('#exe');
 let count = 0;
 let pno = "P";
@@ -75,7 +75,7 @@ var q = [];
 
 var is_first_process = true;
 var current_time = 0, max_completion_time;
-var completed = 0, tq, total_idle_time = 0, length_cycle;
+var completed = 0, tq, total_idle_time = 0, length_cycle = 0;
 
 var sum_tat = 0, sum_wt = 0, sum_rt = 0, sum_ct = 0;
 
@@ -110,8 +110,8 @@ btnAdd.addEventListener('click', function addRow(e) {
     else {
         if (selectedRow == null) {
             count++;
-            visited = new Array(100).fill(false);
 
+            visited = new Array(100).fill(false);
             document.getElementById("qtinput").readOnly = true;
             let num = count.toString();
             let pno_2 = pno.concat(num);
@@ -122,31 +122,33 @@ btnAdd.addEventListener('click', function addRow(e) {
             var cell0 = row.insertCell(0);
             var cell1 = row.insertCell(1);
             var cell2 = row.insertCell(2);
-            var cell3 = row.insertCell(3);
+            // var cell3 = row.insertCell(3);
 
             cell0.innerHTML = pno_2;
             cell1.innerHTML = at_s;
             cell2.innerHTML = bt_s;
-            cell3.innerHTML = ` <td>
-        <a href="#" class="btn btn-warning btn-sm edit">Edit</a>
-        <a href="#" class="btn btn-danger btn-sm delete">Delete</a>
-        <td>`;
-            selectedRow = null;
+            //     cell3.innerHTML = ` <td>
+            // <button class="btn btn-warning btn-sm edit">Edit</button><td>`;
+            // <button class="btn btn-danger btn-sm delete">Delete</button>
+
             showAlert("Entry Added", "success");
 
             atInput.value = '';
             btInput.value = '';
 
-            at = parseInt(at_s);
-            bt = parseInt(bt_s);
-            qt = parseInt(qt_s);
+            atv = parseInt(at_s);
+            btv = parseInt(bt_s);
+            qtv = parseInt(qt_s);
 
-            ps[count - 1].at = at;
+            ps[count - 1].at = atv;
             ps[count - 1].pid = count - 1;
-            ps[count - 1].bt = bt;
-            ps[count - 1].bt_remaining = ps[count - 1].bt;
+            ps[count - 1].bt = btv;
+            ps[count - 1].bt_remaining = btv;
 
-            tq = qt;
+            tq = qtv;
+
+            selectedRow = null;
+
             n = count;
         }
 
@@ -159,10 +161,8 @@ btnAdd.addEventListener('click', function addRow(e) {
             selectedRow = null;
             showAlert("Entry Updated", "info");
         }
-
         clearFields();
     }
-
 });
 
 
@@ -255,6 +255,7 @@ btnAdd.addEventListener('click', function addRow(e) {
 exeInput.addEventListener('click', function exeAlgo(e) {
     e.preventDefault();
 
+    // visited = new Array(100).fill(false);
     var table = document.getElementById("rr_table2");
 
     ps.sort(function (a, b) { return a.at - b.at });
@@ -312,7 +313,7 @@ exeInput.addEventListener('click', function exeAlgo(e) {
         }
     }
     max_completion_time = -1;
-    length_cycle = max_completion_time - ps[0].at;
+    length_cycle = Math.abs(max_completion_time - ps[0].at);
     cpu_utilization = (length_cycle - total_idle_time) / length_cycle;
 
     let row_num = 0;
@@ -324,7 +325,6 @@ exeInput.addEventListener('click', function exeAlgo(e) {
 
         var row = table.getElementsByTagName("tr");
         var row = table.insertRow(row_num);
-
         var cell0 = row.insertCell(0);
         var cell1 = row.insertCell(1);
         var cell2 = row.insertCell(2);
@@ -340,7 +340,7 @@ exeInput.addEventListener('click', function exeAlgo(e) {
 
 
 
-        if (row_num > count) {
+        if (row_num >= count) {
             break;
         }
 
@@ -376,31 +376,87 @@ document.querySelector("#rr_table").addEventListener("click", (e) => {
     t = e.target;
     if (t.classList.contains("edit")) {
         selectedRow = t.parentElement.parentElement;
-        visited = new Array(100).fill(false);
+        // visited = new Array(100).fill(false);
         document.querySelector("#atimeinput").value = selectedRow.children[1].textContent;
         document.querySelector("#btimeinput").value = selectedRow.children[2].textContent;
     }
+
+
+
+
 
 });
 
 
 //Deleting the data
-document.querySelector("#rr_table").addEventListener('click', (e) => {
-    t = e.target;
-    if (t.classList.contains("delete")) {
-        t.parentElement.parentElement.remove();
-        showAlert("Entry Deleted", "danger");
-    }
+// delInput.addEventListener('click', (e) => {
+//     const tb = document.getElementById("rr_table")
 
-});
+//     if (count == 0) {
+//         window.alert("Table is already empty");
+//     }
+//     else {
+
+//         tb.deleteRow(count);
+//         // tb2.deleteRow(count);
+//         // ps.shift();
+//        ps.pop();
+//         // visited[count]=false;
+//         count--;
+
+
+
+
+//         // t.parentElement.parentElement.remove();
+//         showAlert("Entry Deleted", "danger");
+//     }
+
+// });
+
+// delInput.addEventListener('click', function deleteRow(e){
+//     e.preventDefault();
+//     if((count)==0){
+//         // count=-1;
+//         window.alert("Table is already empty");
+//     }else{    
+//         const tb=document.getElementById("rr_table")
+//         tb.deleteRow(count);
+//         // ps=ps.slice(0,n);
+//         // visited[count]=false;
+//         count--;
+
+
+
+//     }
+// });
+
 
 
 //clearing output table
-const delb = document.querySelector("#del");
+var delb = document.querySelector("#del");
 delb.addEventListener('click', () => {
-    var bodyRef = document.getElementById('rr_table2').getElementsByTagName('tbody')[0];
-    bodyRef.innerHTML = '';
+    const tb2 = document.getElementById("rr_table2")
+    var rowCount = tb2.rows.length;
+    for (var i = rowCount - 1; i > 0; i--) {
+        tb2.deleteRow(i);
+    }
+    //    n--;
+    //    count=0;
+
+
+
 });
+
+// var delb2 = document.querySelector("#del2");
+// delb2.addEventListener('click', () => {
+//     const tb = document.getElementById("rr_table")
+//     var rowCount =tb.rows.length;
+//         for (var i = rowCount - 1; i > 0; i--) {
+//             tb.deleteRow(i);
+//         }
+//         count=0;
+// });
+
 
 
 

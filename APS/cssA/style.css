@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Suez+One&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* font-family: 'Suez One', serif;
+  font-family: 'Yeseva One', cursive; */
+    font-family: 'Gentium Book Plus', serif;
+
 
 }
 
@@ -10,10 +17,12 @@
     height: 90vh;
 }
 
-.h1, h1 {
+.h1,
+h1 {
     font-size: 6.5rem;
     font-weight: 750;
 }
+
 .carousel-caption {
     position: absolute;
     right: 15%;
@@ -23,11 +32,11 @@
     padding-bottom: 1.25rem;
     color: #fff;
     text-align: center;
-    top:90px;
+    top: 90px;
 }
 
 p {
-    
+
     margin-top: 0;
     font-size: large;
     margin-bottom: 1rem;
@@ -39,29 +48,19 @@ p {
 // No media query for `xs` since this is the default in Bootstrap */
 
 /* // Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-    
-}
+@media (min-width: 576px) {}
 
 /* // Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-    
-}
+@media (min-width: 768px) {}
 
 /* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-    
-}
+@media (min-width: 992px) {}
 
 /* // X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-    
-}
+@media (min-width: 1200px) {}
 
 /* // XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-    
-}
+@media (min-width: 1400px) {}
 
 
 .about_img {
@@ -95,14 +94,15 @@ section {
     padding-bottom: 31px;
 }
 
-.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show > .nav-link {
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show>.nav-link {
     color: rgba(0, 0, 0, 0.9);
     font-size: larger;
     font-weight: 500;
 }
 
 .navbar-light .navbar-brand {
-    color: rgba(0,0,0,.9);
+    color: rgba(0, 0, 0, .9);
     font-weight: bolder;
 }
 

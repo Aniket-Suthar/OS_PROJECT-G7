@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Suez+One&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus&display=swap');
+
+
+* {
+    /* font-family: 'Suez One', serif; */
+    font-family: 'Gentium Book Plus', serif;
+    /* font-family: 'Yeseva One', cursive; */
+}
+
 .avg_output {
     display: grid;
     place-items: center;
@@ -8,11 +18,15 @@
 }
 
 .text-capitalize {
-    text-transform: capitalize!important;
+    text-transform: capitalize !important;
     font-weight: bolder;
 }
 
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
     margin: 0px;
     font-family: inherit;
     font-size: large;
@@ -29,7 +43,11 @@ label {
     font-weight: bold;
 }
 
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
     margin: 0;
     font-family: inherit;
     font-size: inherit;
@@ -40,21 +58,28 @@ button, input, optgroup, select, textarea {
     padding: 3px 93px;
 }
 
-#del{
+#del {
     margin-left: 21rem;
     width: 20vw;
     font-weight: bolder;
-  
+
 }
 
-#add_row{
+#del2 {
+    margin-left: 21rem;
+    width: 20vw;
+    font-weight: bolder;
+
+}
+
+#add_row {
     margin-left: 6rem;
     width: 20vw;
     font-weight: bolder;
 }
 
 
-#exe{
+#exe {
     width: 20vw;
     font-weight: bolder;
 }
