@@ -10,8 +10,9 @@
     /* font-family: 'Yeseva One', cursive; */
 
 }
-body{
-    color:whitesmoke;
+
+body {
+    color: whitesmoke;
 }
 
 .avg_output {
@@ -96,25 +97,26 @@ textarea {
     width: 10vw;
     font-weight: bolder;
 }
-#back{
+
+#back {
     text-decoration: none;
-    color:white;
+    color: white;
     font-size: x-large;
     font-weight: bolder;
     border-radius: 30px;
 }
 
-#back:hover{
+#back:hover {
     color: rgb(234, 255, 77);
-}  
+}
 
-#excel{
+#excel {
     width: 30vw;
-    color:black;
+    color: black;
     font-size: larger;
     font-weight: bolder;
 }
 
-#excel:hover{
+#excel:hover {
     background-color: rgb(220, 200, 20);
 }

@@ -443,7 +443,7 @@ var download_csv_using_blob = function (file_name, content) {
         document.body.appendChild(a);
         a.style = "display: none";
         var csvUrl = URL.createObjectURL(csvData);
-        a.href =  csvUrl;
+        a.href = csvUrl;
         a.download = file_name;
         a.click();
         URL.revokeObjectURL(a.href)
@@ -475,13 +475,13 @@ var download_csv_using_blob = function (file_name, content) {
 
 // }
 
-const name=document.querySelector("#user").value;
+const name = document.querySelector("#user").value;
 
 //Exporting data to excel sheet
 function ExportToExcel(type, fn, dl) {
     var elt = document.getElementById('rr_table2');
     var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
     return dl ?
-      XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }):
-      XLSX.writeFile(wb, fn || (document.querySelector("#user").value+'.' + (type || 'csv')));
- }
+        XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
+        XLSX.writeFile(wb, fn || (document.querySelector("#user").value + '.' + (type || 'csv')));
+}
