@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus&display=swap');
 body {
     background-repeat: no-repeat;
     background-size: 100%;
-    background-attachment: fixed;
-    background-position: center;
+    font-family: 'Gentium Book Plus', serif;
+    scroll-behavior: smooth;
+    /* background-attachment: fixed;
+    background-position: center; */
   }
 
 
@@ -32,4 +35,18 @@ display: block;
 margin-left: 30%;
 margin-right: 40%;
 margin-bottom: 2%;
+}
+
+a{
+  text-decoration: none;
+  color:white;
+  font-size: x-large;
+  font-weight: bolder;
+  border-radius: 30px;
+  margin-left: 2rem;
+  margin-top: 8rem;
+
+}
+a:hover{
+  color: rgb(232, 249, 84);
 }

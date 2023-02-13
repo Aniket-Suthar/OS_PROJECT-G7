@@ -242,10 +242,10 @@ img {
   /* margin-top: 1em; */
   margin-left: 2rem;
   margin-bottom: 0rem;
-  width: 5rem;
+  width: 6rem;
   height: 5rem;
-  border-radius: 60px;
-  filter: drop-shadow(0 0 0.75rem rgb(234, 87, 247));
+  border-radius: 20px;
+  /* filter: drop-shadow(0 0 0.75rem rgb(248, 248, 243)); */
 }
 
 .box1 a {

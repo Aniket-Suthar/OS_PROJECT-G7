@@ -5,7 +5,13 @@
 * {
     /* font-family: 'Suez One', serif; */
     font-family: 'Gentium Book Plus', serif;
+    scroll-behavior: smooth;
+    /* color: whitesmoke; */
     /* font-family: 'Yeseva One', cursive; */
+
+}
+body{
+    color:whitesmoke;
 }
 
 .avg_output {
@@ -21,6 +27,7 @@
     text-transform: capitalize !important;
     font-weight: bolder;
 }
+
 
 button,
 input,
@@ -72,14 +79,42 @@ textarea {
 
 }
 
+#delete {
+
+    width: 10vw;
+    font-weight: bolder;
+
+}
+
 #add_row {
-    margin-left: 6rem;
-    width: 20vw;
+    margin-left: 9rem;
+    width: 10vw;
     font-weight: bolder;
 }
 
-
 #exe {
-    width: 20vw;
+    width: 10vw;
     font-weight: bolder;
+}
+#back{
+    text-decoration: none;
+    color:white;
+    font-size: x-large;
+    font-weight: bolder;
+    border-radius: 30px;
+}
+
+#back:hover{
+    color: rgb(234, 255, 77);
+}  
+
+#excel{
+    width: 30vw;
+    color:black;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+#excel:hover{
+    background-color: rgb(220, 200, 20);
 }

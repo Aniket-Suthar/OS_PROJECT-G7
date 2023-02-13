@@ -6,6 +6,7 @@
 	/* font-family: 'Suez One', serif;
 	font-family: 'Yeseva One', cursive; */
 	font-family: 'Gentium Book Plus', serif;
+	scroll-behavior: smooth;
 }
 
 body {
@@ -336,7 +337,7 @@ p {
 }
 
 p:hover {
-	box-shadow: #e2e1e1;
+	box-shadow: #fff953;
 }
 
 .h3,
@@ -352,4 +353,16 @@ h2 {
 	font-weight: bolder;
 	text-align: center;
 	color: rgb(213, 255, 62);
+}
+
+#back{
+	text-decoration: none;
+	font-size: x-large;
+
+	font-weight: bolder;
+	color: whitesmoke;
+}
+
+#back:hover{
+	color: yellow;
 }

@@ -52,7 +52,7 @@ class ProcessStruct {
     }
 }
 let ps = [];
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 100000; i++) {
     ps.push(new ProcessStruct());
 }
 
@@ -111,7 +111,7 @@ btnAdd.addEventListener('click', function addRow(e) {
         if (selectedRow == null) {
             count++;
 
-            visited = new Array(100).fill(false);
+            visited = new Array(100000).fill(false);
             document.getElementById("qtinput").readOnly = true;
             let num = count.toString();
             let pno_2 = pno.concat(num);
@@ -432,33 +432,56 @@ document.querySelector("#rr_table").addEventListener("click", (e) => {
 
 
 
-//clearing output table
-var delb = document.querySelector("#del");
-delb.addEventListener('click', () => {
-    const tb2 = document.getElementById("rr_table2")
-    var rowCount = tb2.rows.length;
-    for (var i = rowCount - 1; i > 0; i--) {
-        tb2.deleteRow(i);
+//clearing output tabl
+
+var download_csv_using_blob = function (file_name, content) {
+    var csvData = new Blob([content], { type: 'text/csv' });
+    if (window.navigator && window.navigator.msSaveOrOpenBlob) { // for IE
+        window.navigator.msSaveOrOpenBlob(csvData, file_name);
+    } else { // for Non-IE (chrome, firefox etc.)
+        var a = document.createElement("a");
+        document.body.appendChild(a);
+        a.style = "display: none";
+        var csvUrl = URL.createObjectURL(csvData);
+        a.href =  csvUrl;
+        a.download = file_name;
+        a.click();
+        URL.revokeObjectURL(a.href)
+        a.remove();
     }
-    //    n--;
-    //    count=0;
+};
 
-
-
-});
-
-// var delb2 = document.querySelector("#del2");
-// delb2.addEventListener('click', () => {
-//     const tb = document.getElementById("rr_table")
-//     var rowCount =tb.rows.length;
-//         for (var i = rowCount - 1; i > 0; i--) {
-//             tb.deleteRow(i);
-//         }
-//         count=0;
-// });
+// function exportTableToExcel(tableID){
+//     var downloadlink;
+//     var datatype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+//     var tableSelect=document.getElementById(tableID);
+//     var tableHTML = tableSelect.outerHTML.replace(/ /g,'%20');
+//     Filename='excel.xls';
+//     downloadlink=document.createElement("a");
+//     document.body.appendChild(downloadlink);
 
 
 
 
+//     // if(navigator.msSaveOrOpenBlob){
+//     //     var blob=new Blob(['\ufeff','tableHTML'],{type:datatype});
+//     //     navigator.msSaveOrOpenBlob(blob,Filename);
+//     // }
+
+//     downloadlink.href= datatype +'a'+ tableHTML;
+//     downloadlink.download=Filename;
+//     downloadlink.click();
 
 
+// }
+
+const name=document.querySelector("#user").value;
+
+//Exporting data to excel sheet
+function ExportToExcel(type, fn, dl) {
+    var elt = document.getElementById('rr_table2');
+    var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
+    return dl ?
+      XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }):
+      XLSX.writeFile(wb, fn || (document.querySelector("#user").value+'.' + (type || 'csv')));
+ }
