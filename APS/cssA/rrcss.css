@@ -120,3 +120,25 @@ textarea {
 #excel:hover {
     background-color: rgb(220, 200, 20);
 }
+
+#chart {
+    width: 25vw;
+    margin-left: 28rem;
+    color: black;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+#chart:hover {
+    background-color: rgb(220, 200, 20);
+}
+#chd{
+    /* display: none; */
+   margin-left: 10rem;
+   margin-top: 4rem;
+   background-color: rgb(254, 255, 251);
+}
+#mychart{
+    color: black;
+    
+    }

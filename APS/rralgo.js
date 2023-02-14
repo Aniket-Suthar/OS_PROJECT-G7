@@ -24,7 +24,7 @@ function clearFields() {
 }
 
 
-//Grabbing the values of html Buttons and Classes
+//Grabbing the values/fields of html Buttons and Classes
 let btnAdd = document.querySelector('#add_row');
 let table = document.querySelector('table');
 let qtInput = document.querySelector('#qtinput');
@@ -97,11 +97,15 @@ btnAdd.addEventListener('click', function addRow(e) {
     const qt_s = document.querySelector("#qtinput").value;
     const at_s = document.querySelector("#atimeinput").value;
     const bt_s = document.querySelector("#btimeinput").value;
+    const name= document.querySelector("#user").value;
 
 
     //validating the values
     if (qt_s == "" || at_s == "" || bt_s == "") {
         showAlert("Please Fill All the Details", "danger");
+    }
+    if(name==""){
+        showAlert("Username Can't be empty","danger");
     }
 
     else if (qt_s < 0) {
@@ -124,6 +128,7 @@ btnAdd.addEventListener('click', function addRow(e) {
             //Initializing the visited array value to false
             visited = new Array(100000).fill(false);
             document.getElementById("qtinput").readOnly = true;
+            document.getElementById("user").readOnly = true;
             let num = count.toString();
             let pno_2 = pno.concat(num);
 
@@ -145,9 +150,9 @@ btnAdd.addEventListener('click', function addRow(e) {
             atInput.value = '';
             btInput.value = '';
 
-            atv = parseInt(at_s);
-            btv = parseInt(bt_s);
-            qtv = parseInt(qt_s);
+            atv = parseFloat(at_s);
+            btv = parseFloat(bt_s);
+            qtv = parseFloat(qt_s);
 
             //Passing the same values got from user to the array of objects for the calculation purpose 
             ps[count - 1].at = atv;
@@ -249,6 +254,8 @@ exeInput.addEventListener('click', function exeAlgo(e) {
             ps[index].wt = ps[index].tat - ps[index].bt;
             ps[index].rt = ps[index].start_time - ps[index].at;
 
+
+            //Getting the total time for all the calculation
             sum_tat += ps[index].tat;
             sum_wt += ps[index].wt;
             sum_rt += ps[index].rt;
@@ -302,7 +309,6 @@ exeInput.addEventListener('click', function exeAlgo(e) {
 
         max_completion_time = Math.max(max_completion_time, ps[i].ct)
     }
-
     length_cycle = max_completion_time - ps[0].at;
     cpu_utilization = parseFloat((length_cycle - total_idle_time) / length_cycle);
 
@@ -360,11 +366,11 @@ exeInput.addEventListener('click', function exeAlgo(e) {
     var avg_wt = document.getElementById("avg_wt");
     avg_wt.value = `${sum_wt / n}`;
 
-    var avg_wt = document.getElementById("thrpt");
-    avg_wt.value = `${n / length_cycle}`;
+    var thrpt = document.getElementById("thrpt");
+    thrpt.value = `${n / length_cycle}`;
 
-    var avg_wt = document.getElementById("cpu");
-    avg_wt.value = `${cpu_utilization * 100}%`;
+    var cpu_ut = document.getElementById("cpu");
+    cpu_ut.value = `${cpu_utilization * 100}%`;
 }
 
 
@@ -382,4 +388,61 @@ function ExportToExcel(type, fn, dl) {
     return dl ?
         XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
         XLSX.writeFile(wb, fn || (document.querySelector("#user").value + '.' + (type || 'csv')));
+}
+
+
+function makechart() {
+    //  var data1=[];
+    let labels = ['Total_Completion_time', 'Total_TAT_time', 'Total_Waiting_time', 'Total_Response_time'];
+    // const d=document.getElementById("chd");
+    // d.display=
+
+    // for (let i = 0; i <n; i++) {
+    //     const p=`${i+1}`;
+    //     const element = `${ps[i].ct}`;
+    //     const e2=`${ps[i].tat}`;
+    //     const e3=`${ps[i].wt}`;
+    //     const e4=`${ps[i].rt}`;
+    //     data1.push(p);
+    //     data1.push(element);
+    //     data1.push(e2);
+    //     data1.push(e3);
+    //     data1.push(e4);
+
+    // }
+    const itemdata = [`${sum_ct}`, `${sum_tat}`, `${sum_wt}`, `${sum_rt}`];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            data: itemdata,
+            backgroundColor: ['rgb(66,221,245)', 'rgb(255,255,0)', 'rgb(96,186,45)', 'rgb(255,0,255)']
+        }]
+    };
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {
+            plugins: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: true,
+                    text: 'CHART FOR THE CALCULATIONS',
+                    color: 'rgb(0,0,0)'
+                }
+            }
+        }
+    };
+
+    const chart = new Chart(
+        document.getElementById("mychart"),
+        config
+    );
+}
+
+function showDiv() {
+    document.getElementById('welcomeDiv').style.display = "block";
 }

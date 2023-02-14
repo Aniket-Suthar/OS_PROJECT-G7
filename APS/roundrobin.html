@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -19,6 +20,7 @@
 </head>
 
 <body background="cssA/img/navyblue.png" style="color: white;">
+	<!-- <body> -->
 
 	<div class="container mt-4">
 		<a id="back" href="mainindex.html">Home</a>
@@ -136,8 +138,15 @@
 			</div>
 		</div>
 	</div>
+'"'
+	<button class="btn btn-warning add-btn" id="chart" onclick="makechart()">Chart</button>
 
 
+	<div  style="width: 900px; height: 500px; color:black;border:3px solid black;" id="chd">
+		<canvas id="mychart"></canvas>
+		</div>
+	
+		
 
 	<script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 
