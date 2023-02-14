@@ -1,6 +1,6 @@
 var selectedRow = null;
 
-//Showing alerts
+//Showing alerts function
 function showAlert(message, className) {
     const div = document.createElement("div");
     div.className = `alert alert-${className}`;
@@ -24,7 +24,7 @@ function clearFields() {
 }
 
 
-
+//Grabbing the values of html Buttons and Classes
 let btnAdd = document.querySelector('#add_row');
 let table = document.querySelector('table');
 let qtInput = document.querySelector('#qtinput');
@@ -38,6 +38,7 @@ let qt_s;
 let qt;
 
 
+//Implementing Class for the Calculation of Various times
 class ProcessStruct {
     constructor(pid, at, bt, ct, wt, start_time, tat, rt, bt_remaining) {
         this.pid = pid;
@@ -51,24 +52,31 @@ class ProcessStruct {
         this.bt_remaining = bt_remaining;
     }
 }
+
+//Making Array Of Objects
 let ps = [];
 for (let i = 0; i < 100000; i++) {
     ps.push(new ProcessStruct());
 }
 
 
+//Function for sorting the Arrival Time
 function comparatorAT(a, b) {
     let x = a.at;
     let y = b.at;
     return x < y;
 }
 
+
+//Function for sorting the Process ID
 function comparatorPID(a, b) {
     let x = a.pid;
     let y = b.pid;
     return x < y;
 }
 
+
+//Declaring the various Variables to be used in the execution purpouse
 var n, index;
 var cpu_utilization;
 var q = [];
@@ -80,6 +88,8 @@ var completed = 0, tq, total_idle_time = 0, length_cycle = 0;
 var sum_tat = 0, sum_wt = 0, sum_rt = 0, sum_ct = 0;
 
 
+
+//Adding the event Listener function to add rows to input table
 btnAdd.addEventListener('click', function addRow(e) {
     e.preventDefault();
 
@@ -89,7 +99,7 @@ btnAdd.addEventListener('click', function addRow(e) {
     const bt_s = document.querySelector("#btimeinput").value;
 
 
-    //validating
+    //validating the values
     if (qt_s == "" || at_s == "" || bt_s == "") {
         showAlert("Please Fill All the Details", "danger");
     }
@@ -111,6 +121,7 @@ btnAdd.addEventListener('click', function addRow(e) {
         if (selectedRow == null) {
             count++;
 
+            //Initializing the visited array value to false
             visited = new Array(100000).fill(false);
             document.getElementById("qtinput").readOnly = true;
             let num = count.toString();
@@ -122,14 +133,12 @@ btnAdd.addEventListener('click', function addRow(e) {
             var cell0 = row.insertCell(0);
             var cell1 = row.insertCell(1);
             var cell2 = row.insertCell(2);
-            // var cell3 = row.insertCell(3);
 
+            //Inserting the values got from user to the table rows
             cell0.innerHTML = pno_2;
             cell1.innerHTML = at_s;
             cell2.innerHTML = bt_s;
-            //     cell3.innerHTML = ` <td>
-            // <button class="btn btn-warning btn-sm edit">Edit</button><td>`;
-            // <button class="btn btn-danger btn-sm delete">Delete</button>
+
 
             showAlert("Entry Added", "success");
 
@@ -140,6 +149,7 @@ btnAdd.addEventListener('click', function addRow(e) {
             btv = parseInt(bt_s);
             qtv = parseInt(qt_s);
 
+            //Passing the same values got from user to the array of objects for the calculation purpose 
             ps[count - 1].at = atv;
             ps[count - 1].pid = count - 1;
             ps[count - 1].bt = btv;
@@ -168,142 +178,115 @@ btnAdd.addEventListener('click', function addRow(e) {
 
 
 
-
-
-
-
-
-
-
-// btnAdd.addEventListener('click', function addRow(e) {
-//     e.preventDefault();
-//     qt_s = qtInput.value;
-//     let bt_s = btInput.value;
-//     let at_s = atInput.value;
-//     let at;
-//     let bt;
-
-//     if (qt_s == '' || bt_s == '' || at_s == '') {
-//         window.alert("Please enter all the fields!");
-//     }
-//     else if (qt_s == '0') {
-//         window.alert("Quantum time cannot be 0. Please try again");
-//     }
-//     else if (qt_s < 0) {
-//         window.alert("Quantum time cannot be negative Please try again");
-//     }
-//     else if (bt_s == '0') {
-//         window.alert("Burst time cannot be 0. Please try again");
-//     }
-//     else if (bt_s < 0) {
-//         window.alert("Burst time cannot be negative Please try again");
-//     }
-//     else if (at_s < 0) {
-//         window.alert("Arrival time cannot be negative Please try again");
-//     }
-//     else {
-//         count++;
-//         visited = new Array(100).fill(false);
-//         document.getElementById("qtinput").readOnly = true;
-//         let num = count.toString();
-//         let pno_2 = pno.concat(num);
-//         var table = document.getElementById("rr_table");
-//         var row = table.insertRow(count);
-//         var cell0 = row.insertCell(0);
-//         var cell1 = row.insertCell(1);
-//         var cell2 = row.insertCell(2);
-//         var cell3 = row.insertCell(3);
-
-//         cell0.innerHTML = pno_2;
-//         cell1.innerHTML = at_s;
-//         cell2.innerHTML = bt_s;
-//         cell3.innerHTML = ` <td>
-//         <a href="#" class="btn btn-warning btn-sm edit">Edit</a>
-//         <a href="#" class="btn btn-danger btn-sm delete">Delete</a>
-//         <td>`;
-
-//         atInput.value = '';
-//         btInput.value = '';
-
-//         at = parseInt(at_s);
-//         bt = parseInt(bt_s);
-//         qt = parseInt(qt_s);
-
-//         ps[count - 1].at = at;
-//         ps[count - 1].pid = count - 1;
-//         ps[count - 1].bt = bt;
-//         ps[count - 1].bt_remaining = ps[count - 1].bt;
-
-//         tq = qt;
-//     }
-//     n = count;
-// });
-
-// delInput.addEventListener('click', function deleteRow(e) {
-//     e.preventDefault();
-//     if (count == 0) {
-//         window.alert("Table is already empty");
-//     } else {
-//         table.deleteRow(count);
-//         count--;
-//         burst_times.length = burst_times.length - 1;
-//         arr_times.length = arr_times.length - 1;
-//     }
-// });
-
-
+//Adding the event the listener function for the execution part
 exeInput.addEventListener('click', function exeAlgo(e) {
     e.preventDefault();
 
-    // visited = new Array(100).fill(false);
+    //Grabbing the table to  put value after execution
     var table = document.getElementById("rr_table2");
 
+
+    // * * * * * * * * * M A I N   I M P L E M E N T A T I O N   O F  A L G O R I T H M * * * * * * * * * *
+
+
+    //Sorting all the processes according to their arrival time according to RR algo.
     ps.sort(function (a, b) { return a.at - b.at });
+
+    //Putting the first process in the queue i.e using the index
     q.push(0);
+
+    //Marking the first process visit to true
     visited[0] = true;
 
+    //Running the loop till all the processes are not executed 
     while (completed != n) {
+        //Making the index to point to the first process
         index = q[0];
+
+        //Removing the first process from the ready queue to make next process to come in
         q.shift();
+
+        //Checking whether the rem. burst and burst time are same as initially they should be equal always
+
+        //This condition will run only once for every processes
         if (ps[index].bt_remaining == ps[index].bt) {
+
+            //Start_time gives time at which the process first starts to excute
             ps[index].start_time = Math.max(current_time, ps[index].at);
+
+            //Calculating the idle time for the processes
             total_idle_time += (is_first_process == true) ? 0 : ps[index].start_time - current_time;
+
+            //Current time gives the current time at which the porcess is
             current_time = ps[index].start_time;
+
+            //Marking the first process
             is_first_process = false;
         }
 
+        //Checking the condition when burst_time is greater than Quantum time
         if (ps[index].bt_remaining - tq > 0) {
+
+            //Storing the remaing time in the bt_remaining value
             ps[index].bt_remaining -= tq;
+
+            //Incrementing the current time for the particular process 
             current_time += tq;
         }
 
+        //This part will run whenever the process has been completed fully or it has burst_time less than 
+        //Or Equal to the Quantum time
         else {
             current_time += ps[index].bt_remaining;
+
+            //As process is completed so making its rem. time to 0
             ps[index].bt_remaining = 0;
             completed++;
+
+            //Calculating various values for the particular process
             ps[index].ct = current_time;
             ps[index].tat = ps[index].ct - ps[index].at;
             ps[index].wt = ps[index].tat - ps[index].bt;
             ps[index].rt = ps[index].start_time - ps[index].at;
+
             sum_tat += ps[index].tat;
             sum_wt += ps[index].wt;
             sum_rt += ps[index].rt;
-
             sum_ct += ps[index].ct;
         }
 
+
+        //This loop checking whether after executing the first  process 
+        //And adding the time quatum to the current time what are the various process 
+        //which are ready to execute at that point of time
         for (var i = 1; i < n; i++) {
+            //Checking for the new process that are ready to be execute at a particular "Current time"
             if (ps[i].bt_remaining > 0 && ps[i].at <= current_time && visited[i] == false) {
+
+                //Adding the processes which are ready in the queue using their index
                 q.push(i);
+
+                //Marking their index in visited array to be true
                 visited[i] = true;
             }
         }
+
+
+        //This condition will run when the bt_rem time of the current running process is not zero
+        //i.e the process is still not completed
         if (ps[index].bt_remaining > 0) {
+
+            //Again pushing the Current running process to queue whenever it is not completely executed
             q.push(index);
         }
 
+        //Exception Condition when the queue is empty , when CPU is idle 
+        //This cond occurs when arrival time of some processes is grater than the current time
         if (q.length === 0) {
             for (let i = 1; i < n; i++) {
+
+                //Taking any process from the queue which has Burst_Time > 0
+                //means the processes which have not come  / or not completed fully
                 if (ps[i].bt_remaining > 0) {
                     q.push(i);
                     visited[i] = true;
@@ -311,26 +294,44 @@ exeInput.addEventListener('click', function exeAlgo(e) {
                 }
             }
         }
-    }
+    } //End of WHile loop
+
+
     max_completion_time = -1;
-    length_cycle = Math.abs(max_completion_time - ps[0].at);
-    cpu_utilization = (length_cycle - total_idle_time) / length_cycle;
+    for (let i = 0; i < n; i++) {
+
+        max_completion_time = Math.max(max_completion_time, ps[i].ct)
+    }
+
+    length_cycle = max_completion_time - ps[0].at;
+    cpu_utilization = parseFloat((length_cycle - total_idle_time) / length_cycle);
+
+
+    // * * * * * * * * *E N D   O F    M A I N   I M P L E M E N T A T I O N   O F  A L G O R I T H M * * * * * * * * * *
+
+
+
 
     let row_num = 0;
 
+    //Sorting the values of Process ID
     ps.sort((a, b) => a.pid - b.pid);
 
     for (let i = 0; i < n; i++) {
         row_num++;
 
+        //Declaring Variable for adding the Value to "OUTPUT TABLE"
         var row = table.getElementsByTagName("tr");
         var row = table.insertRow(row_num);
+
+        //Declaring variables for getting the value to be put in the HTML table
         var cell0 = row.insertCell(0);
         var cell1 = row.insertCell(1);
         var cell2 = row.insertCell(2);
         var cell3 = row.insertCell(3);
         var cell4 = row.insertCell(4);
 
+        //Inserting the value to table rows
         cell0.innerHTML = `P${i + 1}`;
         cell1.innerHTML = `${ps[i].ct}`;
         cell2.innerHTML = `${ps[i].tat}`;
@@ -339,12 +340,14 @@ exeInput.addEventListener('click', function exeAlgo(e) {
 
 
 
-
+        //Exiting condition to stop adding the rows to HTML table
         if (row_num >= count) {
             break;
         }
 
     }
+
+    //Declaring and addind the other remaining Values for "OTHER DETAILS table"
     var avg_ct = document.getElementById("avg_ct");
     avg_ct.value = `${sum_ct / n}`;
 
@@ -369,112 +372,7 @@ exeInput.addEventListener('click', function exeAlgo(e) {
 
 
 
-
-
-//Editing Data
-document.querySelector("#rr_table").addEventListener("click", (e) => {
-    t = e.target;
-    if (t.classList.contains("edit")) {
-        selectedRow = t.parentElement.parentElement;
-        // visited = new Array(100).fill(false);
-        document.querySelector("#atimeinput").value = selectedRow.children[1].textContent;
-        document.querySelector("#btimeinput").value = selectedRow.children[2].textContent;
-    }
-
-
-
-
-
-});
-
-
-//Deleting the data
-// delInput.addEventListener('click', (e) => {
-//     const tb = document.getElementById("rr_table")
-
-//     if (count == 0) {
-//         window.alert("Table is already empty");
-//     }
-//     else {
-
-//         tb.deleteRow(count);
-//         // tb2.deleteRow(count);
-//         // ps.shift();
-//        ps.pop();
-//         // visited[count]=false;
-//         count--;
-
-
-
-
-//         // t.parentElement.parentElement.remove();
-//         showAlert("Entry Deleted", "danger");
-//     }
-
-// });
-
-// delInput.addEventListener('click', function deleteRow(e){
-//     e.preventDefault();
-//     if((count)==0){
-//         // count=-1;
-//         window.alert("Table is already empty");
-//     }else{    
-//         const tb=document.getElementById("rr_table")
-//         tb.deleteRow(count);
-//         // ps=ps.slice(0,n);
-//         // visited[count]=false;
-//         count--;
-
-
-
-//     }
-// });
-
-
-
-//clearing output tabl
-
-var download_csv_using_blob = function (file_name, content) {
-    var csvData = new Blob([content], { type: 'text/csv' });
-    if (window.navigator && window.navigator.msSaveOrOpenBlob) { // for IE
-        window.navigator.msSaveOrOpenBlob(csvData, file_name);
-    } else { // for Non-IE (chrome, firefox etc.)
-        var a = document.createElement("a");
-        document.body.appendChild(a);
-        a.style = "display: none";
-        var csvUrl = URL.createObjectURL(csvData);
-        a.href = csvUrl;
-        a.download = file_name;
-        a.click();
-        URL.revokeObjectURL(a.href)
-        a.remove();
-    }
-};
-
-// function exportTableToExcel(tableID){
-//     var downloadlink;
-//     var datatype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
-//     var tableSelect=document.getElementById(tableID);
-//     var tableHTML = tableSelect.outerHTML.replace(/ /g,'%20');
-//     Filename='excel.xls';
-//     downloadlink=document.createElement("a");
-//     document.body.appendChild(downloadlink);
-
-
-
-
-//     // if(navigator.msSaveOrOpenBlob){
-//     //     var blob=new Blob(['\ufeff','tableHTML'],{type:datatype});
-//     //     navigator.msSaveOrOpenBlob(blob,Filename);
-//     // }
-
-//     downloadlink.href= datatype +'a'+ tableHTML;
-//     downloadlink.download=Filename;
-//     downloadlink.click();
-
-
-// }
-
+//Adding the Data to Excel file using Inbuilt JS library
 const name = document.querySelector("#user").value;
 
 //Exporting data to excel sheet
