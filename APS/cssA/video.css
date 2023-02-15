@@ -1,19 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus&display=swap');
 body {
     background-repeat: no-repeat;
     background-size: 100%;
-    font-family: 'Gentium Book Plus', serif;
-    scroll-behavior: smooth;
-    /* background-attachment: fixed;
-    background-position: center; */
+    background-attachment: fixed;
+    background-position: center;
+    border: 13px rgb(2, 120, 189) solid;
+    
   }
 
 
 
 video {
-    border-radius: 20px;
-    border: white 9px solid;
-    box-shadow: inset 32px 32px 33px 34px rgb(21, 255, 0);
+    border-radius: 10px;
+    border: rgb(1, 21, 63) 4px solid;
+    box-shadow: inset 2px 2px 3px 4px rgb(0, 47, 255);
 display: block;
 margin-left: auto;
 margin-right: auto;
@@ -22,31 +21,16 @@ margin-top: 6%;
 margin-bottom: auto;
 }
 h1{
-color: aliceblue;
+color: rgb(0, 0, 0);
 text-align: center;
 font-weight: 700;
 font-size: 50px;
 
 }
 
-
 .head{
 display: block;
 margin-left: 30%;
 margin-right: 40%;
 margin-bottom: 2%;
-}
-
-a{
-  text-decoration: none;
-  color:white;
-  font-size: x-large;
-  font-weight: bolder;
-  border-radius: 30px;
-  margin-left: 2rem;
-  margin-top: 8rem;
-
-}
-a:hover{
-  color: rgb(232, 249, 84);
 }

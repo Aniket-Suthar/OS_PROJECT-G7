@@ -1,326 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Round Robin Information</title>
-	<link rel="icon" type="image/x-icon" href="HTM/img/logo4.jpg">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus&display=swap');
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Round Robin Information</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="HTM/img/logo4.jpg">
+    <style>
+        * {
+    box-sizing: border-box;
+}
 
+h1 {
+    text-align: center;
+    font-size: 60px;
+    color: rgb(0, 0, 0);
+}
+body{
+    padding: 80px;
+    border-image-repeat: fill;
+    background-color: #ffffff;
+    margin: 0%;
    
-
-    * {
-      box-sizing: border-box;
-      font-family: 'Gentium Book Plus',
-    serif;
-    scroll-behavior: smooth;
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 60px;
-      color: white;
-    }
-
-    body {
-      border-image-repeat: fill;
-      background-color: black;
-      border: white 3px solid;
-      display: flex;
-      padding-left: 4rem;
-      padding-right: 4rem;
-      flex-wrap: wrap;
-      flex-direction: column;
-      align-content: center;
-      justify-content: space-evenly;
-      align-items: center;
-    }
-
-    div {
-
-      color: rgb(231, 32, 32);
-      font-weight: 500;
-      font-weight: bolder;
-      font-size: large;
-      text-align: left;
-    }
-
-    .container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      margin-top: 20px;
-      animation: round-robin 3s ease-in-out infinite;
-    }
-
-    .Advantage {
-      border: white solid;
-
-      padding-left: 20px;
-      padding-right: 20px;
-      background-color: rgb(93, 122, 184);
-      width: 750px;
-      height: 650px;
-      border-radius: 10px;
-      text-align: center;
-      text-decoration: solid;
-
-    }
-
-    .Disadvantage {
-      border: white solid;
-
-      padding-left: 20px;
-      padding-right: 20px;
-      background-color: rgb(70, 151, 45);
-      width: 750px;
-      height: 650px;
-      border-radius: 10px;
-      text-align: center;
-      text-decoration: solid;
-      padding: 20px;
-    }
-
-    .How {
-      border: white solid;
-      padding-left: 20px;
-      padding-right: 20px;
-
-      background-color: rgb(206, 98, 188);
-      width: 750px;
-      height: 650px;
-      border-radius: 10px;
-      text-align: center;
-      text-decoration: solid;
-      padding-bottom: 20px;
-    }
-
-    .Characteristics {
-      padding-left: 20px;
-      padding-right: 20px;
-
-      background-color: rgb(180, 67, 67);
-      width: 750px;
-      height: 650px;
-      border-radius: 10px;
-      text-align: center;
-      text-decoration: solid;
-      border: white solid;
-    }
-
-    .Boxes {
-      display: flex;
-      flex-direction: column;
-      padding-top: 30px;
-      justify-content: space-between;
-      text-decoration: solid;
-      text-align: center;
-      padding-left: 45px;
-    }
-
-    .Characteristics:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 10px rgb(255, 0, 0), 0 0 20px rgb(255, 0, 0), 0 0 30px rgb(255, 0, 0), 0 0 40px #ff0707;
-      color: #ff0707;
-    }
-
-    .Advantage:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 10px rgb(55, 0, 255), 0 0 20px rgb(25, 0, 255), 0 0 30px rgb(68, 0, 255), 0 0 40px #3407ff;
-      color: #1707ff;
-    }
-
-    .Disadvantage:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 10px rgb(78, 202, 6), 0 0 20px rgb(21, 255, 0), 0 0 30px rgb(30, 255, 0), 0 0 40px #0fff07;
-      color: #30ff07;
-    }
-
-    .How:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 10px rgb(255, 0, 179), 0 0 20px rgb(255, 0, 255), 0 0 30px rgb(255, 0, 179), 0 0 40px #ff07d6;
-      color: #ff07ac;
-    }
-
-    .box {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      width: 140px;
-      margin-left: 4rem;
-      height: 120px;
-      background-color: rgb(2, 255, 2);
-      border-radius: 25px;
-      color: white;
-      text-align: center;
-      padding-right: 43px;
-      padding-top: 33px;
-      font-size: 25px;
-      box-shadow: 8px 7px 5px rgb(1 255 22 / 77%);
-    }
-
-    .inactive {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      background-color: rgb(255, 0, 0);
-      box-shadow: 8px 7px 5px rgba(255, 1, 1, 0.774);
-    }
-
-    p {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      color: white;
-      font-size: larger;
-      text-align: justify;
-      margin-top: 50px;
-    }
-
-    @keyframes round-robin {
-      0% {
-        transform: translateX(0);
+   border: rgb(21, 114, 253) 12px solid;
+}
+div{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    font-weight: bolder;
+    font-size: large;
+    text-align: left;
+}
+.accordion-button{
+   font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+    color: black;
+}
+.accordion-button:not(.collapsed){
+    color: inherit;
+    background: rgb(0, 47, 255);
+    color: white;
+}
+.accordion-button:not(.collapsed)::after{
+filter: brightness(0%) invert(70%);
+}
+.accordion-button:focus{
+    box-shadow: inherit;
+}
+.container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 20px;
+        animation: round-robin 3s ease-in-out infinite;
       }
 
-      100% {
-        transform: translateX(-60px);
+      .box {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        width: 120px;
+        height: 120px;
+        background-color: rgb(2, 255, 2);
+        border-radius: 25px;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        text-align: start;
+        padding-left: 20px;
+        padding-top: 33px;
+        font-size: 25px;
+        box-shadow: 8px 7px 5px rgba(1, 255, 22, 0.774);
       }
-    }
 
-    h2 {
-      text-align: center;
-      color: white;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      font-size: 30px;
-    }
+      .inactive {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: rgb(255, 0, 0);
+        box-shadow: 8px 7px 5px rgba(255, 1, 1, 0.774);
+      }
 
-    a {
-      text-decoration: none;
-      color: white;
-      font-size: x-large;
-      font-weight: bolder;
-      border-radius: 30px;
-      margin-right: 66rem;
-
-    }
-
- 
-    a:hover {
-      color: rgb(244, 255, 121);
-    }
-  </style>
+      p {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: rgb(0, 0, 0);
+        font-size: larger;
+        text-align: justify;
+        margin-top: 50px;
+      }
+      @keyframes round-robin {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-60px); }
+      }
+      h2{
+        
+        color: rgb(0, 0, 0);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 30px;
+      }
+  img{
+    margin-left: 9rem;
+    border: 10px solid #8080f4;
+  }
+    </style>
 </head>
+<body> 
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item active" >
+        <a class="page-link">Documentation</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="ROUNDROBINVIDEO.html">Video Explanation</a>
+      </li>
+    </ul>
+  </nav><br>
+  <br>
+  <br>
 
-<body> <div><a href="mainindex.html">Home</a></div>
-  <h1> <span class="multiText">Round Robin </span>
-  </h1>
-  <p>Round Robin is a scheduling algorithm that allocates resources to tasks in a cyclic order, ensuring fairness and
-    equal distribution. In this algorithm, each task is assigned a fixed amount of time to use the resources, known as a
-    time slice or quantum. Once a task has used up its quantum, the scheduler moves on to the next task and assigns it a
-    new quantum. This process continues until all tasks have been completed. </p>
-  <p>One of the advantages of Round Robin is that it ensures that each task gets a fair share of the resources,
-    preventing any single task from monopolizing the system. It is also simple to implement and can handle a large
-    number of tasks effectively. However, it can also lead to poor performance for tasks that require a large amount of
-    time to complete, as they may have to wait for multiple quanta to finish. </p>
-  <div class="container">
-    <div class="box">Task 1</div>
-    <div class="box inactive">Task 2</div>
-    <div class="box inactive">Task 3</div>
-  </div>
-  <p>The animation demonstrates the working of the Round Robin scheduling algorithm. In the algorithm, each task is
-    assigned a fixed amount of time to use the resources, known as a time slice or quantum. The scheduler moves from one
-    task to another in a cyclic manner, allocating each task its quantum of time.
+       <h1> <span class="multiText">Round Robin </span> 
+       </h1> 
+       <p>Round Robin is a scheduling algorithm that allocates resources to tasks in a cyclic order, ensuring fairness and equal distribution. In this algorithm, each task is assigned a fixed amount of time to use the resources, known as a time slice or quantum. Once a task has used up its quantum, the scheduler moves on to the next task and assigns it a new quantum. This process continues until all tasks have been completed. </p>
+       <p>One of the advantages of Round Robin is that it ensures that each task gets a fair share of the resources, preventing any single task from monopolizing the system. It is also simple to implement and can handle a large number of tasks effectively. However, it can also lead to poor performance for tasks that require a large amount of time to complete, as they may have to wait for multiple quanta to finish. </p>
+       <div class="container">
+         <div class="box">Task 1</div>
+         <div class="box inactive">Task 2</div>
+         <div class="box inactive">Task 3</div>
+       </div>
+        <p>The animation demonstrates the working of the Round Robin scheduling algorithm. In the algorithm, each task is assigned a fixed amount of time to use the resources, known as a time slice or quantum. The scheduler moves from one task to another in a cyclic manner, allocating each task its quantum of time.
 
-    The animation shows the movement of the task boxes from left to right, simulating the allocation of resources to
-    each task. At the start of the animation, Task 1 is active and highlighted in green, representing that it is
-    currently using the resources. The inactive task boxes, Task 2 and Task 3, are highlighted in red , representing
-    that they are waiting for their turn to use the resources.
+            The animation shows the movement of the task boxes from left to right, simulating the allocation of resources to each task. At the start of the animation, Task 1 is active and highlighted in green, representing that it is currently using the resources. The inactive task boxes, Task 2 and Task 3, are highlighted in red , representing that they are waiting for their turn to use the resources.
+            
+            As the animation progresses, the task boxes move to the left. This movement represents the cyclic allocation of resources in the Round Robin algorithm, where the scheduler moves from one task to another in a fixed order.
+            
+            At the end of each cycle of the animation, the task boxes have moved back to their original position, and the next task in the queue is now active and highlighted in green. This process continues until all tasks have been completed and each task has been allocated its quantum of time.
+            
+            In this way, the animation demonstrates how the Round Robin scheduling algorithm works, allocating resources to tasks in a fair and equal manner, ensuring that each task gets a fair share of the resources.</p>
 
-    As the animation progresses, the task boxes move to the left. This movement represents the cyclic allocation of
-    resources in the Round Robin algorithm, where the scheduler moves from one task to another in a fixed order.
-
-    At the end of each cycle of the animation, the task boxes have moved back to their original position, and the next
-    task in the queue is now active and highlighted in green. This process continues until all tasks have been completed
-    and each task has been allocated its quantum of time.
-
-    In this way, the animation demonstrates how the Round Robin scheduling algorithm works, allocating resources to
-    tasks in a fair and equal manner, ensuring that each task gets a fair share of the resources.</p>
-
-  <h2>Diagram</h2>
-  <div class="Diagram"><img src="DAR/img/RRtext.jpg" width="800px" height="450px"
-      style="text-align: center; border-radius: 20px;  border: white solid; box-shadow: 8px 7px 5px rgb(253, 253, 253); "
-      alt=""> </div>
-  <div class="Boxes">
-    <div class="Characteristics">
-      <h2>Characteristics of Round-Robin Scheduling</h2>
-      <p> • Round robin is a pre-emptive algorithm <br>
-        • The CPU is shifted to the next process after fixed interval time, which is called time quantum/time slice.
-        <br>
-        • The process that is preempted is added to the end of the queue. <br>
-        • Round robin is a hybrid model which is clock-driven
-        • Time slice should be minimum, which is assigned for a specific task that needs to be processed. However, it
-        may differ OS to OS. <br>
-        • It is a real time algorithm which responds to the event within a specific time limit. <br>
-        • Round robin is one of the oldest, fairest, and easiest algorithm. <br>
-        • Widely used scheduling method in traditional OS. <br>
-      </p>
-    </div>
-    <br>
-    <br>
-    <div class="How">
-      <h2>How does the Round Robin Algorithm Work</h2>
-      <p>1.All processes are added to the ready queue. <br>
-        2.First, the burst time of each process is compared to the CPU's time quantum. <br>
-        3.If a process's burst time is less than or equal to the round robin scheduling algorithm's time quantum, the
-        process will run until its burst time. <br>
-        4.If the burst time of the process is greater than the time quantum, the process will run up to its time quantum
-        (TQ). <br>
-        5.When the time quantum comes up, it checks if the process has run completely. Once completed, the process will
-        exit. Otherwise, return to the ready state. <br>
-      </p>
-    </div>
-    <br>
-    <br>
-    <div class="Advantage">
-      <h2>Advantage of Round-robin Scheduling</h2>
-      <p>1.It does not face the issues of starvation or convoy effect. <br>
-        2.All the jobs get a fair allocation of CPU. <br>
-        3.It deals with all process without any priority <br>
-        4.If you know the total number of processes on the run queue, then you can also assume the worst-case response
-        time for the same process. <br>
-        5.This scheduling method does not depend upon burst time. That is why it is easily implementable on the system.
-        <br>
-        6.Once a process is executed for a specific set of the period, the process is preempted, and another process
-        executes for that given time period. <br>
-        7.Allows OS to use the Context switching method to save states of preempted processes. <br>
-        8.It gives the best performance in terms of average response time. <br>
-      </p>
-    </div><br>
-    <br>
-    <div class="Disadvantage">
-      <h2>Disadvantage of Round-robin Scheduling</h2>
-      <p>
-        1.There is Larger waiting time and Response time. <br>
-        2.There is Low throughput. <br>
-        3.There is Context Switches. <br>
-        4.Gantt chart seems to come too big (if quantum time is less for scheduling. For Example:1 ms for big
-        scheduling.) <br>
-        5.Time consuming scheduling for small quantum. <br>
-
-      </p>
-    </div>
-    <br>
-    <br>
-
+        <h2>Diagram</h2>
+    <img src="DAR/img/RRtext.jpg" width="800px" height="450px" style="text-align: center; border-radius: 20px;  "  alt=""> 
+    <br><br>
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              Characteristics
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">•	Round robin is a pre-emptive algorithm <br>
+                •	The CPU is shifted to the next process after fixed interval time, which is called time quantum/time slice. <br>
+                •	The process that is preempted is added to the end of the queue. <br>
+                •	Round robin is a hybrid model which is clock-driven
+                •	Time slice should be minimum, which is assigned for a specific task that needs to be processed. However, it may differ OS to OS. <br>
+                •	It is a real time algorithm which responds to the event within a specific time limit. <br>
+                •	Round robin is one of the oldest, fairest, and easiest algorithm. <br>
+                •	Widely used scheduling method in traditional OS. <br></div>
+          </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                How it is implemented?
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">1.All processes are added to the ready queue. <br>
+                2.First, the burst time of each process is compared to the CPU's time quantum. <br>
+                3.If a process's burst time is less than or equal to the round robin scheduling  algorithm's time quantum, the process will run until its burst time. <br>
+                4.If the burst time of the process is greater than the time quantum, the process will run up to its time quantum (TQ). <br>
+                5.When the time quantum comes up, it checks if the process has run completely. Once completed, the process will exit. Otherwise, return to the ready state. <br></div>
+            </div>
+          </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+              Advantages
+            </button>
+          </h2>
+          <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">1.It does not face the issues of starvation or convoy effect. <br>
+                2.All the jobs get a fair allocation of CPU. <br>
+                3.It deals with all process without any priority <br>
+                4.If you know the total number of processes on the run queue, then you can also assume the worst-case response time for the same process. <br>
+                5.This scheduling method does not depend upon burst time. That is why it is easily implementable on the system. <br>
+                6.Once a process is executed for a specific set of the period, the process is preempted, and another process  executes for that given time period. <br>
+                7.Allows OS to use the Context switching method to save states of preempted processes. <br>
+                8.It gives the best performance in terms of average response time. <br></div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              Disadvantage
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">1.There is Larger waiting time and Response time. <br>
+                2.There is Low throughput. <br>
+                3.There is Context Switches. <br> 
+                4.Gantt chart seems to come too big (if quantum time is less for scheduling. For Example:1 ms for big scheduling.) <br>
+                5.Time consuming scheduling for small quantum.	<br></div>
+          </div>
+        </div>
+      </div>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
-      var typingEffect = new Typed(".multiText", {
-        strings: ["Round Robin Scheduling", "Round Robin Scheduling", "Round Robin Scheduling"],
-        loop: true,
-        typeSpeed: 20,
-        backspeed: 40,
-        backDelay: 1400
-      }
-      )
+        var typingEffect = new Typed(".multiText",{
+            strings : ["Round Robin Scheduling" , "Round Robin Scheduling", "Round Robin Scheduling"],
+            loop : true,
+            typeSpeed:20,
+            backspeed : 40,
+            backDelay: 1400
+        }
+        )
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+     
   </div>
 </body>
-
 </html>

@@ -53,6 +53,11 @@ class ProcessStruct {
     }
 }
 
+
+
+let ganttCharPD = [];
+let ganttCharAT = [];
+
 //Making Array Of Objects
 let ps = [];
 for (let i = 0; i < 100000; i++) {
@@ -81,6 +86,7 @@ var n, index;
 var cpu_utilization;
 var q = [];
 
+
 var is_first_process = true;
 var current_time = 0, max_completion_time;
 var completed = 0, tq, total_idle_time = 0, length_cycle = 0;
@@ -97,15 +103,12 @@ btnAdd.addEventListener('click', function addRow(e) {
     const qt_s = document.querySelector("#qtinput").value;
     const at_s = document.querySelector("#atimeinput").value;
     const bt_s = document.querySelector("#btimeinput").value;
-    const name= document.querySelector("#user").value;
+    const name = document.querySelector("#user").value;
 
 
     //validating the values
-    if (qt_s == "" || at_s == "" || bt_s == "") {
+    if (qt_s == "" || at_s == "" || bt_s == "" || name == " ") {
         showAlert("Please Fill All the Details", "danger");
-    }
-    if(name==""){
-        showAlert("Username Can't be empty","danger");
     }
 
     else if (qt_s < 0) {
@@ -205,8 +208,11 @@ exeInput.addEventListener('click', function exeAlgo(e) {
 
     //Running the loop till all the processes are not executed 
     while (completed != n) {
+
         //Making the index to point to the first process
         index = q[0];
+        ganttCharPD.push(ps[index].pid);
+        ganttCharAT.push(current_time);
 
         //Removing the first process from the ready queue to make next process to come in
         q.shift();
@@ -215,6 +221,7 @@ exeInput.addEventListener('click', function exeAlgo(e) {
 
         //This condition will run only once for every processes
         if (ps[index].bt_remaining == ps[index].bt) {
+
 
             //Start_time gives time at which the process first starts to excute
             ps[index].start_time = Math.max(current_time, ps[index].at);
@@ -231,6 +238,8 @@ exeInput.addEventListener('click', function exeAlgo(e) {
 
         //Checking the condition when burst_time is greater than Quantum time
         if (ps[index].bt_remaining - tq > 0) {
+
+            //    console.log("P"+ps[index].pid+ " ");
 
             //Storing the remaing time in the bt_remaining value
             ps[index].bt_remaining -= tq;
@@ -312,6 +321,13 @@ exeInput.addEventListener('click', function exeAlgo(e) {
     length_cycle = max_completion_time - ps[0].at;
     cpu_utilization = parseFloat((length_cycle - total_idle_time) / length_cycle);
 
+    for (let i = 0; i < n; i++) {
+        console.log()
+
+    }
+
+
+
 
     // * * * * * * * * *E N D   O F    M A I N   I M P L E M E N T A T I O N   O F  A L G O R I T H M * * * * * * * * * *
 
@@ -352,6 +368,30 @@ exeInput.addEventListener('click', function exeAlgo(e) {
         }
 
     }
+
+
+    //GANTT CHART IMPLEMENTATION
+    var tb2 = document.getElementById("gant")
+   
+    for (let i = 0; i <= ganttCharPD.length; i++) {
+       
+        //Declaring Variable for adding the Value to "OUTPUT TABLE"
+        var row = tb2.getElementsByTagName("tr");
+        var row = tb2.insertRow(0);
+
+        var newCell2 = tb2.rows[i].insertCell(-1);
+        var newCell = tb2.rows[i].insertCell(-1);
+
+        //Inserting the value to table rows
+        newCell2.innerHTML = `${ganttCharAT[i]}`;
+        newCell.innerHTML = `P${ganttCharPD[i] + 1}`;
+        if (i == ganttCharPD.length) {
+            newCell2.innerHTML = `${ganttCharAT[i - 1] + 1}`;
+            break;
+        }
+
+    }
+
 
     //Declaring and addind the other remaining Values for "OTHER DETAILS table"
     var avg_ct = document.getElementById("avg_ct");

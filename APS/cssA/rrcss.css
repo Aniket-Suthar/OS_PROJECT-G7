@@ -86,16 +86,27 @@ textarea {
     font-weight: bolder;
 
 }
+#delete:hover{
+    background-color: rgb(240, 240, 144);
+}
 
-#add_row {
+#add_row{
     margin-left: 9rem;
     width: 10vw;
     font-weight: bolder;
+}
+#add_row:hover {
+    background-color:rgb(54, 94, 20);
 }
 
 #exe {
     width: 10vw;
     font-weight: bolder;
+}
+
+#exe:hover{
+    background-color: rgb(222, 99, 99);
+    box-shadow: inset;
 }
 
 #back {
@@ -130,7 +141,7 @@ textarea {
 }
 
 #chart:hover {
-    background-color: rgb(220, 200, 20);
+    background-color: rgb(20, 220, 33);
 }
 #chd{
     /* display: none; */
@@ -142,3 +153,14 @@ textarea {
     color: black;
     
     }
+#gant{
+    background-color: brown;
+    color: black;
+
+}
+#gant ,col:nth-child(odd) {
+    background:red;
+  }
+  col:nth-child(even) {
+    background:green;
+  }
