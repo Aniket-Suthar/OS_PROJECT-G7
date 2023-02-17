@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="icon" type="image/x-icon" href="HTM/img/logo4.jpg">
+  <style>
+    body {
+      background-attachment: fixed;
+      background-image: url(HTM/img/background.jpg);
+      background-size: cover;
+    }
+
+    h2 {
+      color: white;
+    }
+
+    p {
+      color: #fff;
+    }
+
+    .cardcontainer {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .cardcontainer {
+      align-items: center;
+    }
+
+    .card {
+      position: relative;
+      width: 263px;
+      height: 350px;
+      background-color: #e0dddd;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      transition: transform 0.5s ease-in-out;
+      transform-style: preserve-3d;
+      margin: 22px;
+      display: inline-block;
+
+    }
+
+    .card {
+      background: inherit;
+    }
+
+    .card:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: inherit;
+      box-shadow: inset 40px 20px 400px rgb(66, 66, 69);
+      filter: blur(10px);
+    }
+
+    .card:hover,
+    .card:active {
+      transform: translate3d(0, -4px, 0) rotateX(10deg);
+    }
+
+    .card:active {
+      transform: translate3d(0, -5px, 0) rotateX(10deg) scale(0.98);
+    }
+
+    .card-image {
+      height: 100px;
+      overflow: hidden;
+      display: block;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .card-image img {
+      width: 40%;
+      height: 90%;
+      border-radius: 60%;
+      margin-left: 4em;
+      object-fit: cover;
+    }
+
+    /* .card-content {
+        padding: 10px;
+      } */
+
+    h2 {
+      margin-top: 10em;
+      margin-bottom: 10em;
+      font-size: medium;
+      text-align: center;
+      padding-bottom: 10rem;
+    }
+
+    p {
+      font: size 4px;
+      ;
+  
+      margin-right: 3em;
+      text-decoration: wavy;
+      padding-top: 1rem;
+    }
+
+    .card-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 90%;
+      height: 100%;
+      padding: 20px;
+
+      transform-style: preserve-3d;
+   
+    }
+
+    .card-content h2,
+    .card-content p {
+      margin: 0;
+      padding: 2px;
+      transform-style: preserve-3d;
+   
+      text-align: justify
+    }
+
+    .card-content h2 {
+      margin-top: 0;
+    }
+
+    .btn {
+      margin-right: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      size: initial;
+      background-color: #5942e9;
+    }
+
+    .btn-secondary {
+      size: initial;
+      background-color: #611485fa;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cardcontainer">
+    <div class="card">
+      <div class="card-content">
+        <div class="card-image">
+          <img src="HTM/img/rr.png" alt="Image 1">
+        </div>
+        <h2>ROUND ROBIN ALGORITHM</h2>
+        <p>Round-robin is an algorithm employed by process and network schedulers in computing. As the term is generally
+          used,
+          time slices are assigned to each process in equal portions and in circular order, handling all processes
+          without priority.</p>
+        <button class="btn btn-primary">Button 1</button>
+        <button class="btn btn-secondary">Button 2</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <div class="card-image">
+          <img src="HTM/img/bankers.png" alt="Image 2">
+        </div>
+        <h2>BANKER'S ALGORITHM FOR DEADLOCK ALGORITHM</h2>
+        <p>It is a banker algorithm, which is used to avoid deadlock and allocate resources safely to each process in
+          the computer system.
+          As the name suggests, it is used mainly in banking system, to determine if a loan can be sanctioned to a
+          person or not.</p>
+        <button class="btn btn-primary">Button 1</button>
+        <button class="btn btn-secondary">Button 2</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <div class="card-image">
+          <img src="HTM/img/dsa.png" alt="Image 3">
+        </div>
+        <h2>SCAN/C-SCAN DISK SCHEDULING ALGORITHM</h2>
+        <p>A Process makes the I/O requests to the operating system to access the disk. Disk Scheduling Algorithm
+          manages those requests and decides the order of the disk access given to the requests.</p>
+        <button class="btn btn-primary">Button 1</button>
+        <button class="btn btn-secondary">Button 2</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <div class="card-image">
+          <img src="HTM/img/mru.png" alt="Image 4">
+        </div>
+        <h2>MRU PAGE REPLACEMENT ALGORITHM</h2>
+        <p>Page replacement algorithms decide which memory pages to page out, sometimes called swap out, or write to
+          disk, when a page of memory needs to be allocated. MRU is considered an optimal page replacement algo</p>
+        <button class="btn btn-primary">Button 1</button>
+        <button class="btn btn-secondary">Button 2</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(function (card) {
+      const btns = card.querySelectorAll('.btn');
+
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          alert(`You clicked button ${btn.innerHTML} on card ${card.querySelector('h2').innerHTML}`);
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

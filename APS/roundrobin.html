@@ -21,32 +21,38 @@
 		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
-<body background="cssA/img/navyblue.png" style="color: white;">
+<body style="background-color: rgb(41, 95, 196); color: rgb(255, 255, 255);">
 	<!-- <body> -->
-
+		
+			<div class="container">
+			  <a class="navbar-brand" href="mainindex.html">
+				<img src="HTM/img/rrhome.jpg" alt="Bootstrap" width="40" height="40" >	
+			</a>
+			</div>
+		 
 	<div class="container mt-4">
-		<a id="back" href="mainindex.html">Home</a>
+		
 		<div class="text-center">
 			<h1 class="display-5 mb-5 text-capitalize">ROUND ROBIN ALGORITHM</h1>
 		</div>
 		<div class="main row justify-content-center">
 			<form action="" class="rr_form row justify-content-center mb-4" autocomplete="off">
-				<div class="col- col-md-8   mb-4">
+				<div class="col- col-md-5  mb-3">
 					<label for="username">Enter the username :</label>
 					<input class="form-control" id="user" type="text" placeholder="Enter the username">
 				</div>
 
-				<div class="col- col-md-8   mb-4">
+				<div class="col- col-md-5   mb-3">
 					<label for="quantum">Quantum Time :</label>
 					<input class="form-control" id="qtinput" type="number" placeholder="Enter the quantum time">
 				</div>
 
-				<div class="col- col-md-8 mb-4">
+				<div class="col- col-md-5 mb-3">
 					<label for="arrival">Arrival Time :</label>
 					<input class="form-control" id="atimeinput" type="number" placeholder="Enter the arrival time">
 				</div>
 
-				<div class="col- col-md-8 mb-4">
+				<div class="col- col-md-5 mb-3">
 					<label for="burst">Burst Time :</label>
 					<input class="form-control" id="btimeinput" type="number" placeholder="Enter the burst time">
 				</div>
@@ -73,8 +79,6 @@
 					</thead>
 				</table>
 			</div>
-
-
 			<div class="output col-10 col-md-10 mt-5">
 				<h1 class="mb-5 text-center"><strong>OUTPUT TABLE</strong></h1>
 				<div class="col-10 col-md-8 mb-4">
@@ -128,32 +132,32 @@
 					excel</button>
 				<h1 class="mb-5 mt-1 text-center"><strong>OTHER DETAILS</strong></h1>
 				<div class="avg_output">
-					<div class="col-10 col-md-8 mb-4">
+					<div class="col-8 col-md-5 mb-2">
 						<label for="avg_ct">Average Completion Time:</label>
 						<input id="avg_ct" type="text" readonly>
 					</div>
 
-					<div class="col-10 col-md-8 mb-4">
+					<div class="col-10 col-md-5 mb-3">
 						<label for="avg_tat">Average Turn Around Time:</label>
 						<input id="avg_tat" type="text" readonly>
 					</div>
 
-					<div class="col-10 col-md-8 mb-4">
+					<div class="col-10 col-md-5 mb-3">
 						<label for="avg_rt">Average Response Time:</label>
 						<input id="avg_rt" type="text" readonly>
 					</div>
 
-					<div class="col-10 col-md-8 mb-4">
+					<div class="col-10 col-md-5 mb-3">
 						<label for="avg_wt">Average Waiting Time:</label>
 						<input id="avg_wt" type="text" readonly>
 					</div>
 
-					<div class="col-10 col-md-8 mb-4">
+					<div class="col-10 col-md-5 mb-3">
 						<label for="thrpt">Throughput: </label>
 						<input id="thrpt" type="text" readonly>
 					</div>
 
-					<div class="col-10 col-md-8 mb-4">
+					<div class="col-10 col-md-5 mb-3">
 						<label for="cpu">CPU Utilization : </label>
 						<input id="cpu" type="text" readonly>
 					</div>

@@ -372,9 +372,9 @@ exeInput.addEventListener('click', function exeAlgo(e) {
 
     //GANTT CHART IMPLEMENTATION
     var tb2 = document.getElementById("gant")
-   
+
     for (let i = 0; i <= ganttCharPD.length; i++) {
-       
+
         //Declaring Variable for adding the Value to "OUTPUT TABLE"
         var row = tb2.getElementsByTagName("tr");
         var row = tb2.insertRow(0);

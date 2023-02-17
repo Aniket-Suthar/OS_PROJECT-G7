@@ -6,6 +6,7 @@
     /* font-family: 'Suez One', serif; */
     font-family: 'Gentium Book Plus', serif;
     scroll-behavior: smooth;
+   margin: 1%;
     /* color: whitesmoke; */
     /* font-family: 'Yeseva One', cursive; */
 
@@ -13,15 +14,16 @@
 
 body {
     color: whitesmoke;
+    border: rgb(255, 255, 255) 4px solid;
 }
 
 .avg_output {
+    margin-left: 15%;
     display: grid;
-    place-items: center;
-    float: left;
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  align-items: center;
 }
 
 .text-capitalize {
@@ -59,7 +61,7 @@ textarea {
     margin: 0;
     font-family: inherit;
     font-size: inherit;
-    color: rgb(23, 140, 19);
+    color: rgb(0, 0, 0);
     line-height: inherit;
     font-size: larger;
     font-weight: bold;
@@ -134,18 +136,22 @@ textarea {
 
 #chart {
     width: 25vw;
-    margin-left: 28rem;
+    margin-left: 30rem;
     color: black;
     font-size: larger;
     font-weight: bolder;
 }
-
+    nav{
+        padding: 20px;
+        background-color: rgb(255, 255, 255);
+       
+    }
 #chart:hover {
     background-color: rgb(20, 220, 33);
 }
 #chd{
     /* display: none; */
-   margin-left: 10rem;
+   margin-left: 15rem;
    margin-top: 4rem;
    background-color: rgb(254, 255, 251);
 }
