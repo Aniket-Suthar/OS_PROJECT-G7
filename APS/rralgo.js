@@ -432,24 +432,8 @@ function ExportToExcel(type, fn, dl) {
 
 
 function makechart() {
-    //  var data1=[];
+  
     let labels = ['Total_Completion_time', 'Total_TAT_time', 'Total_Waiting_time', 'Total_Response_time'];
-    // const d=document.getElementById("chd");
-    // d.display=
-
-    // for (let i = 0; i <n; i++) {
-    //     const p=`${i+1}`;
-    //     const element = `${ps[i].ct}`;
-    //     const e2=`${ps[i].tat}`;
-    //     const e3=`${ps[i].wt}`;
-    //     const e4=`${ps[i].rt}`;
-    //     data1.push(p);
-    //     data1.push(element);
-    //     data1.push(e2);
-    //     data1.push(e3);
-    //     data1.push(e4);
-
-    // }
     const itemdata = [`${sum_ct}`, `${sum_tat}`, `${sum_wt}`, `${sum_rt}`];
 
     const data = {

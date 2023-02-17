@@ -5,7 +5,7 @@
 * {
     /* font-family: 'Suez One', serif; */
     font-family: 'Gentium Book Plus', serif;
-    scroll-behavior: smooth;
+
    margin: 1%;
     /* color: whitesmoke; */
     /* font-family: 'Yeseva One', cursive; */
@@ -16,6 +16,11 @@ body {
     color: whitesmoke;
     border: rgb(255, 255, 255) 4px solid;
 }
+
+  
+  canvas {
+    max-height: 50%;
+  }
 
 .avg_output {
     margin-left: 15%;

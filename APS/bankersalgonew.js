@@ -48,6 +48,7 @@ for(let i = 0; i<totalProcesses; i++){
     totalall_A += allocation_arr_A[i];
     totalall_B += allocation_arr_B[i];
     totalall_C += allocation_arr_C[i];
+    
     remaining_arr_A.push(maxNeed_A[i] - allocation_arr_A[i]);
     remaining_arr_B.push(maxNeed_B[i] - allocation_arr_B[i]);
     remaining_arr_C.push(maxNeed_C[i] - allocation_arr_C[i]);
