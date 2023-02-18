@@ -432,7 +432,7 @@ function ExportToExcel(type, fn, dl) {
 
 
 function makechart() {
-  
+
     let labels = ['Total_Completion_time', 'Total_TAT_time', 'Total_Waiting_time', 'Total_Response_time'];
     const itemdata = [`${sum_ct}`, `${sum_tat}`, `${sum_wt}`, `${sum_rt}`];
 

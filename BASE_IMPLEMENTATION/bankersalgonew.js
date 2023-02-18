@@ -56,7 +56,7 @@ for(let i = 0; i<totalProcesses; i++){
 
 //resources allocated to processes cant be more than available resources
 if(totalall_A > total_arr[0] || totalall_B > total_arr[1] || totalall_C > total_arr[2]){
-    console.log("Invalid");
+   
 }else{
     console.log("Valid");
     // console.log(remaining_arr_C);

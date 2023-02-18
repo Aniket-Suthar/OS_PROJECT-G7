@@ -6,7 +6,7 @@
     /* font-family: 'Suez One', serif; */
     font-family: 'Gentium Book Plus', serif;
 
-   margin: 1%;
+    margin: 1%;
     /* color: whitesmoke; */
     /* font-family: 'Yeseva One', cursive; */
 
@@ -17,18 +17,18 @@ body {
     border: rgb(255, 255, 255) 4px solid;
 }
 
-  
-  canvas {
+
+canvas {
     max-height: 50%;
-  }
+}
 
 .avg_output {
     margin-left: 15%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-  align-items: center;
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    align-items: center;
 }
 
 .text-capitalize {
@@ -93,17 +93,19 @@ textarea {
     font-weight: bolder;
 
 }
-#delete:hover{
+
+#delete:hover {
     background-color: rgb(240, 240, 144);
 }
 
-#add_row{
+#add_row {
     margin-left: 9rem;
     width: 10vw;
     font-weight: bolder;
 }
+
 #add_row:hover {
-    background-color:rgb(54, 94, 20);
+    background-color: rgb(54, 94, 20);
 }
 
 #exe {
@@ -111,7 +113,7 @@ textarea {
     font-weight: bolder;
 }
 
-#exe:hover{
+#exe:hover {
     background-color: rgb(222, 99, 99);
     box-shadow: inset;
 }
@@ -146,32 +148,19 @@ textarea {
     font-size: larger;
     font-weight: bolder;
 }
-    nav{
-        padding: 20px;
-        background-color: rgb(255, 255, 255);
-       
-    }
+
+nav {
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+
+}
+
 #chart:hover {
     background-color: rgb(20, 220, 33);
 }
-#chd{
-    /* display: none; */
-   margin-left: 15rem;
-   margin-top: 4rem;
-   background-color: rgb(254, 255, 251);
-}
-#mychart{
-    color: black;
-    
-    }
-#gant{
-    background-color: brown;
+
+
+#mychart {
     color: black;
 
 }
-#gant ,col:nth-child(odd) {
-    background:red;
-  }
-  col:nth-child(even) {
-    background:green;
-  }
