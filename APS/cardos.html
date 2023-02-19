@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+      body{
+        margin: 0%;
+        background-image: url(HTM/img/background.jpg);
+        background-size:cover;
+      }
+      h2 {
+        color: white;
+      }
+      p{
+        color: #fff;
+      }
+      .cardcontainer{
+        display: grid;
+       grid-template-columns: repeat( 4, 1fr);
+      grid-auto-rows: auto;
+      grid-gap:5px;
+      }
+    .card {
+        position: relative;
+        width: 280px;
+        height: 400px;
+        background-color: #e0dddd;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        transition: transform 0.5s ease-in-out;
+        transform-style: preserve-3d;
+        margin: 20px;
+      
+      }
+      .card {
+    background: inherit;
+}
+.card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    box-shadow: inset 40px 20px 400px rgb(66, 66, 69);
+    filter: blur(10px);
+}
+      .card:hover,.card:active{
+        transform: translate3d(0,-4px,0) rotateX(10deg);
+      }
+      .card:active{
+        transform: translate3d(0,-5px,0) rotateX(10deg) scale(0.98);
+      }
+      .card-image {
+          height: 100px;
+          overflow: hidden;
+        
+      }
+      
+      .card-image img {
+        width: 40%;
+        height: 90%;
+        border-radius: 50%;
+        margin-left: 4em;
+        object-fit: cover;
+      }
+      
+      /* .card-content {
+        padding: 10px;
+      } */
+      
+      h2 {
+        margin-top: 0em;
+        font-size:medium;
+        text-align: center;
+        
+      }
+  
+      .card-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 90%;
+        height: 100%;
+        padding: 20px;
+
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+}
+
+.card-content h2, .card-content p {
+    margin: 0;
+    padding: 0;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+   
+}
+
+.card-content h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.buttonBlock{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-row: 1;
+margin: 3px;
+
+}
+      .btn {
+        
+        margin-right: 10px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      
+      .btn-primary {
+       height: 40px;
+       width: 100px;
+        background-color: #038129;
+      }
+      
+      .btn-secondary {
+        height: 40px;
+       width: 100px;
+        background-color: #2338f7fa;
+      }
+.banner{
+  width: 100%;
+  height: 100vh;
+  background-image: url(HTM/img/bg3.jpg);
+  background-size: cover;
+ 
+}
+.navbar{
+      width: 100%;
+      padding: 25px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+.Text{
+    cursor: pointer;
+    color: white;
+    text-align: left;
+    font-size: 30px;
+}
+.navbar ul li{
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
+}
+.navbar ul li a {
+ 
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+}
+.navbar ul li::after{
+ content: '';
+ height: 3px;
+ width: 0;
+ background: #01ffff;
+ position: absolute;
+ left: 0;
+ bottom: -10px;
+ transition: 0.5s ;
+}
+.navbar ul li:hover::after{
+  width: 100%;
+}
+.content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+.content h1{
+  font-size: 60px;
+  margin-top: 80px;
+}
+.content p{
+  margin: 40px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+
+}
+button{
+  width: 200px;
+  padding: 15px 0;
+  text-align: center;
+  margin: 20px 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  
+  border: 2px solid rgb(0, 132, 255) ;
+  background-color: transparent;
+  color: rgb(255, 252, 252);
+  
+  cursor: pointer;
+  background-color:rgb(0, 132, 255);
+
+}
+</style>
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+          <ul>
+            <li class="Text">OS VIRTUAL LAB</li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+        </div>
+
+        <div class="content">
+          <h1>SCHEDULING ALGORITHMS IMPLEMENTATION</h1>
+          <p>A Process Scheduler schedules different processes to be assigned to the CPU based on particular scheduling algorithms. These algorithms are either non-preemptive or preemptive. Non-preemptive algorithms are designed so that once a process enters the running state, it cannot be preempted until it completes its allotted time, whereas the preemptive scheduling is based on priority where a scheduler may preempt a low priority running process anytime when a high priority process enters into a ready state.  
+            </p>
+            <div>
+              <button type="button">EXPORE MORE!</button>
+            </div>
+        </div>
+    </div>
+  <div class="cardcontainer">
+    <div class="card">
+        <div class="card-content">
+          <div class="card-image">
+            <img src="HTM/img/rr.png" alt="Image 1" height="2" width="1">
+          </div>
+          <div class="textblock">
+          <h2>ROUND ROBIN  ALGORITHM</h2>
+          <p>Round-robin  is  an  algorithm  employed by process  and  network  schedulers  in  computing. As the term is generally
+            used,
+            time slices are assigned to each process in equal portions and in circular order, handling all processes
+            without priority.
+          <br>
+          <br>
+          <br>
+          </p>
+          </div>
+          <div class="buttonBlock">
+          <button class="btn btn-primary">EXPLORE</button>
+          <button class="btn btn-secondary">DEMO</button>
+           </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-content">
+          <div class="card-image">
+            <img src="HTM/img/bankers.png" alt="Image 2">
+          </div>
+          <div class="textBlock">
+          <h2>BANKER'S ALGORITHM FOR DEADLOCK  ALGORITHM</h2>
+          <p>It is a banker algorithm, which is used to avoid deadlock and allocate resources safely to each process in
+            the computer system.
+            As the name suggests, it is used mainly in banking system, to determine if a loan can be sanctioned to a
+            person or not.</p>
+          </div>
+            <div class="buttonBlock">
+          <button class="btn btn-primary">EXPLORE</button>
+          <button class="btn btn-secondary">DEMO</button>
+        </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-content">
+          <div class="card-image">
+            <img src="HTM/img/dsa.png" alt="Image 3">
+          </div>
+          <div class="textBlock">
+          <h2>SCAN/C-SCAN DISK SCHEDULING ALGORITHM</h2>
+          <p>A Process makes the I/O requests to the operating system to access the disk. Disk Scheduling Algorithm
+            manages those requests and decides the order of the disk access given to the requests.
+          <br>
+          <br>
+          <br>
+          </p>
+          </div>
+          <div class="buttonBlock">
+            <button class="btn btn-primary">EXPLORE</button>
+          <button class="btn btn-secondary">DEMO</button>
+        </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-content">
+          <div class="card-image">
+            <img src="HTM/img/mru.png" alt="Image 4">
+          </div>
+          <div class="textBlock">
+          <h2>MRU PAGE REPLACEMENT ALGORITHM</h2>
+          <p>Page replacement algorithms decide which memory pages to page out, sometimes called swap out, or write to
+            disk, when a page of memory needs to be allocated. MRU is considered an optimal page replacement algo
+            <br>
+            <br>
+          </p>
+          </div>
+          <div class="buttonBlock"></div>
+            <button class="btn btn-primary">EXPLORE</button>
+          <button class="btn btn-secondary">DEMO</button>
+        </div>
+        </div>
+      </div>
+    </div>
+      <script>
+        const cards = document.querySelectorAll('.card');
+
+cards.forEach(function(card) {
+  const btns = card.querySelectorAll('.btn');
+
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      alert(`You clicked button ${btn.innerHTML} on card ${card.querySelector('h2').innerHTML}`);
+    });
+  });
+});
+      </script>
+</body>
+</html>

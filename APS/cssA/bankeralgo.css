@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Suez+One&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus&display=swap');
+
+
+* {
+    /* font-family: 'Suez One', serif; */
+    font-family: 'Gentium Book Plus', serif;
+    scroll-behavior: smooth;
+   margin: 1%;
+    /* color: whitesmoke; */
+    /* font-family: 'Yeseva One', cursive; */
+
+}
+
+body {
+    color: whitesmoke;
+    border: rgb(255, 255, 255) 4px solid;
+}
+
+.avg_output {
+    margin-left: 15%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  align-items: center;
+}
+
+.text-capitalize {
+    text-transform: capitalize !important;
+    font-weight: bolder;
+}
+
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    margin: 0px;
+    font-family: inherit;
+    font-size: large;
+    line-height: inherit;
+    padding: 3px 93px;
+}
+
+
+
+label {
+    display: inline-block;
+    padding-left: 0px;
+    font-size: larger;
+    font-weight: bold;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    color: rgb(0, 0, 0);
+    line-height: inherit;
+    font-size: larger;
+    font-weight: bold;
+    padding: 3px 93px;
+}
+
+#del {
+    margin-left: 21rem;
+    width: 20vw;
+    font-weight: bolder;
+
+}
+
+#del2 {
+    margin-left: 21rem;
+    width: 20vw;
+    font-weight: bolder;
+
+}
+
+#delete {
+
+    width: 10vw;
+    font-weight: bolder;
+
+}
+#delete:hover{
+    background-color: rgb(240, 240, 144);
+}
+
+#add_row{
+    margin-left: 9rem;
+    width: 10vw;
+    font-weight: bolder;
+}
+#add_row:hover {
+    background-color:rgb(54, 94, 20);
+}
+
+#exe {
+    width: 10vw;
+    font-weight: bolder;
+}
+
+#exe:hover{
+    background-color: rgb(222, 99, 99);
+    box-shadow: inset;
+}
+
+#back {
+    text-decoration: none;
+    color: white;
+    font-size: x-large;
+    font-weight: bolder;
+    border-radius: 30px;
+}
+
+#back:hover {
+    color: rgb(234, 255, 77);
+}
+
+#excel {
+    width: 30vw;
+    color: black;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+#excel:hover {
+    background-color: rgb(220, 200, 20);
+}
+
+#chart {
+    width: 25vw;
+    margin-left: 24rem;
+    color: black;
+    font-size: larger;
+    font-weight: bolder;
+}
+    nav{
+        padding: 20px;
+        background-color: rgb(255, 255, 255);
+       
+    }
+#chart:hover {
+    background-color: rgb(20, 220, 33);
+}
+#chd{
+    /* display: none; */
+   margin-left: 15rem;
+   margin-top: 4rem;
+   background-color: rgb(254, 255, 251);
+}
+#mychart{
+    color: black;
+    
+    }
+#gant{
+    background-color: brown;
+    color: black;
+
+}
+#gant ,col:nth-child(odd) {
+    background:red;
+  }
+  col:nth-child(even) {
+    background:green;
+  }

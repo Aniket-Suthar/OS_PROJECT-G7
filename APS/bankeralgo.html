@@ -9,10 +9,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>BANKER'S Algo</title>
-
+    <link rel="stylesheet" href="cssA/bankeralgo.css">
 	<link rel="icon" type="image/x-icon" href="HTM/img/logo4.jpg">
 
-	<link rel="stylesheet" href="cssA/rrcss.css">
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
 
@@ -29,79 +28,80 @@
 			<img src="HTM/img/rrhome.jpg" alt="Bootstrap" width="40" height="40">
 		</a>
 	</div>
-	<div class="container grid-container mt-4">
+	<div class="container mt-4">
 
 
 		<div class="main row justify-content-center">
 
 
 			<form action="" class="rr_form row justify-content-center mb-4" autocomplete="off">
-				<div class="text-center grid">
-					<h1 class="display-5 mb-5 text-capitalize">BANKER'S ALGORITHM FOR DEADLOCK</h1>
+				<div class="col-center ">
+					<h1 class="display-5 mb-5 text-center">BANKER'S ALGORITHM FOR DEADLOCK</h1>
 				</div>
 
-				<div class="col- col-md-5  mb-3 grid">
+				<div class="col- col-md-5  mb-3 ">
 					<label for="username">Enter the username :</label>
 					<input class="form-control" id="user" type="text" placeholder="Enter the username">
 				</div>
 
-				<div class="col- col-md-5 mb-3 grid">
+				<div class="col- col-md-5 mb-3 ">
 					<label for="arrival">Enter the Value of Total Resources A :</label>
 					<input class="form-control" id="apinput" type="number" placeholder="Enter the total Processes ">
 				</div>
 
-				<div class="col- col-md-5 mb-3 grid">
+				<div class="col- col-md-5 mb-3 ">
 					<label for="burst">Enter the Value ofTotal Resources B :</< /label>
 						<input class="form-control" id="bpinput" type="number" placeholder="Enter the total Processes ">
 				</div>
 
-				<div class="col- col-md-5 mb-3 grid">
+				<div class="col- col-md-5 mb-3 ">
 					<label for="burst">Enter the Value of Total Resources C :</< /label>
 						<input class="form-control" id="cpinput" type="number" placeholder="Enter the total Processes ">
-				</div>
+			<br>	</div>
 
 
 				<!-- ALLOCATED RESOURCES -->
 
 				<h1 class="mb-5 text-center"><strong>ALLOCATED RESOURCES</strong></h1>
 
-				<div class="col- col-md-5 mb-3 grid">
+				<div class="col- col-md-3 mb-2 ">
 					<label for="arrival">Enter the Value of Resource A :</label>
 					<input class="form-control" id="allocA" type="number" placeholder="Enter the total Processes ">
 				</div>
 
-				<div class="col- col-md-5 mb-3 grid">
+				<div class="col- col-md-3 mb-2 ">
 					<label for="burst">Enter the Value of Resource B :</< /label>
 						<input class="form-control" id="allocB" type="number" placeholder="Enter the total Processes ">
 				</div>
 
-				<div class="col- col-md-5 mb-3 grid">
+				<div class="col- col-md-3 mb-2 ">
 					<label for="burst">Enter the Value ofResource C :</< /label>
 						<input class="form-control" id="allocC" type="number" placeholder="Enter the total Processes ">
-				</div>
+			<br>	</div>
 
 
 				<!-- MAXNEED RESOURCES -->
 
 				<h1 class="mb-5 text-center"><strong>MAXNEED RESOURCES</strong></h1>
 
-				<div class="col- col-md-5 mb-3 grid">
+				<div class="col- col-md-3 mb-2 ">
 					<label for="arrival">Enter the Value of Process A :</label>
 					<input class="form-control" id="needA" type="number" placeholder="Enter the total Processes ">
 				</div>
 
-				<div class="col- col-md-5 mb-3 grid">
+				<div class="col- col-md-3 mb-2 ">
 					<label for="burst">Enter the Value of Resource B :</< /label>
 						<input class="form-control" id="needB" type="number" placeholder="Enter the total Processes ">
 				</div>
 
-				<div class="col- col-md-5 mb-3 grid">
+				<div class="col- col-md-3 mb-2 ">
 					<label for="burst">Enter the Value of Resource C :</< /label>
 						<input class="form-control" id="needC" type="number" placeholder="Enter the total Processes ">
 				</div>
 
-
+<br> <br>
 				<div class="col- col-md-8 ">
+					<br>
 					<button class="btn btn-success add-btn" id="add_row" type="submit">Add Resource</button>
 					<button class="btn btn-danger add-btn" id="exe" type="submit">Execute</button>
 					<button class="btn btn-warning add-btn" id="delete" type="submit">Delete Table</button>
@@ -141,17 +141,17 @@
 					excel</button>
 				<h1 class="mb-5 mt-1 text-center"><strong>OTHER DETAILS</strong></h1>
 
-				<div class="col-8 col-md-5 mb-2">
+				<div class="col-8 col-md-4 mb-2">
 					<label for="res_ver">Resource Allocation Verification:</label>
 					<input id="res_ver" type="text" readonly>
 				</div>
 
-				<div class="col-8 col-md-5 mb-2">
+				<div class="col-8 col-md-4 mb-2">
 					<label for="dd_state">Deadlock State :</label>
 					<input id="dd_state" type="text" readonly>
 				</div>
 
-				<div class="col-8 col-md-5 mb-2">
+				<div class="col-8 col-md-4 mb-2">
 					<label for="safe">SAFE SEQUENCE :</label>
 					<input id="safe" type="text" readonly>
 				</div>
