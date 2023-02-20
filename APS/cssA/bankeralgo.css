@@ -20,10 +20,11 @@ body {
 .avg_output {
     margin-left: 15%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
   grid-auto-rows: minmax(100px, auto);
   align-items: center;
+ 
 }
 
 .text-capitalize {
@@ -52,6 +53,8 @@ label {
     font-size: larger;
     font-weight: bold;
 }
+
+
 
 button,
 input,
@@ -92,8 +95,8 @@ textarea {
     background-color: rgb(240, 240, 144);
 }
 
-#add_row{
-    margin-left: 9rem;
+#add_row {
+    margin-left: 13rem;
     width: 10vw;
     font-weight: bolder;
 }
@@ -135,8 +138,15 @@ textarea {
 }
 
 #chart {
+    width: 15vw;
+    margin-left: 22rem;
+    color: black;
+    font-size: larger;
+    font-weight: bolder;
+}
+#toggle {
     width: 25vw;
-    margin-left: 24rem;
+    margin-left: 29rem;
     color: black;
     font-size: larger;
     font-weight: bolder;
@@ -151,9 +161,9 @@ textarea {
 }
 #chd{
     /* display: none; */
-   margin-left: 15rem;
+   margin-left: 12rem;
    margin-top: 4rem;
-   background-color: rgb(254, 255, 251);
+   background-color: rgb(159, 235, 247);
 }
 #mychart{
     color: black;

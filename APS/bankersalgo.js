@@ -275,7 +275,7 @@ exeInput.addEventListener('click', function exeAlgo(e) {
         // resources allocated to processes cant be more than available resources
         //validation condition as Available resources should not be greated than Allocated resources
         if (totalall_A > total_arr[0] || totalall_B > total_arr[1] || totalall_C > total_arr[2]) {
-            document.getElementById("res_ver").value = "Invalid Allocation Available Resources < Allocated Resources";
+            document.getElementById("res_ver").value = "Invalid Allocation";
             deadlock = true;
         }
 
@@ -430,7 +430,7 @@ function makechart() {
     var popCanvas = document.getElementById("popChart");
 
     Chart.defaults.font.family = "Lato";
-    Chart.defaults.font.size = 20;
+    Chart.defaults.font.size = 15;
     Chart.defaults.color = "black";
 
     var barChart = new Chart(popCanvas, {
@@ -441,7 +441,7 @@ function makechart() {
                 'Total_Maxneed_A', 'Total_Maxneed_B', 'Total_maxneed_C'
             ],
             datasets: [{
-                label: 'TOTAL RESOURCES ALLOCATIONS',
+                label: 'VARIOUS RESOURCES ALLOCATIONS',
                 data: [`${RsumA}`, `${RsumB}`, `${RsumC}`,
                 `${AsumA}`, `${AsumB}`, `${AsumC}`,
                 `${MsumA}`, `${MsumB}`, `${MsumC}`,
