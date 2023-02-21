@@ -1,84 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banker's algorithm Info</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="icon" type="image/x-icon" href="HTM/img/logo4.jpg">
-    <style>
-        * {
-    box-sizing: border-box;
-}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banker's algorithm Info</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="icon" type="image/x-icon" href="HTM/img/logo4.jpg">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-h1 {
-    text-align: center;
-    font-size: 60px;
-    color: rgb(0, 0, 0);
-}
-body{
-    padding: 80px;
-    border-image-repeat: fill;
-    background-color: #ffffff;
-    margin: 0%;
-   
-   border: rgb(21, 114, 253) 12px solid;
-}
-div{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: rgb(0, 0, 0);
-    font-weight: 500;
-    font-weight: bolder;
-    font-size: large;
-    text-align: left;
-}
-.accordion-button{
-   font-size: 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: 400;
-    color: black;
-}
-.accordion-button:not(.collapsed){
-    color: inherit;
-    background: rgb(0, 47, 255);
-    color: white;
-}
-.accordion-button:not(.collapsed)::after{
-filter: brightness(0%) invert(70%);
-}
-.accordion-button:focus{
-    box-shadow: inherit;
-}
+    h1 {
+      text-align: center;
+      font-size: 60px;
+      color: rgb(0, 0, 0);
+    }
 
-      p {
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        color: rgb(0, 0, 0);
-        font-size: larger;
-        text-align: justify;
-        margin-top: 50px;
+    body {
+      padding: 80px;
+      border-image-repeat: fill;
+      background-color: #ffffff;
+      margin: 0%;
+
+      border: rgb(21, 114, 253) 12px solid;
+    }
+
+    div {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      color: rgb(0, 0, 0);
+      font-weight: 500;
+      font-weight: bolder;
+      font-size: large;
+      text-align: left;
+    }
+
+    .accordion-button {
+      font-size: 20px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-weight: 400;
+      color: black;
+    }
+
+    .accordion-button:not(.collapsed) {
+      color: inherit;
+      background: rgb(0, 47, 255);
+      color: white;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+      filter: brightness(0%) invert(70%);
+    }
+
+    .accordion-button:focus {
+      box-shadow: inherit;
+    }
+
+    p {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      color: rgb(0, 0, 0);
+      font-size: larger;
+      text-align: justify;
+      margin-top: 50px;
+    }
+
+    @keyframes round-robin {
+      0% {
+        transform: translateX(0);
       }
-      @keyframes round-robin {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-60px); }
+
+      100% {
+        transform: translateX(-60px);
       }
-      h2{
-        color: rgb(0, 67, 250);
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 30px;
-      }
-  
-    </style>
+    }
+
+    h2 {
+      color: rgb(0, 67, 250);
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 30px;
+    }
+  </style>
 </head>
-<body> 
+
+<body>
   <div class="containernew">
-		<a class="navbar-brand" href="cardos.html">
-			<img src="HTM/img/rrhome.jpg" alt="Bootstrap" width="40" height="40">
-		</a>
-	</div>
+    <a class="navbar-brand" href="cardos.html">
+      <img src="HTM/img/rrhome.jpg" alt="Bootstrap" width="40" height="40">
+    </a>
+  </div>
   <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
-      <li class="page-item active" >
+      <li class="page-item active">
         <a class="page-link">Documentation</a>
       </li>
       <li class="page-item">
@@ -89,129 +104,159 @@ filter: brightness(0%) invert(70%);
   <br>
   <br>
 
-       <h1> <span class="multiText">Banker's algorithm </span> 
-       </h1> 
-       <p> The bankers algorithm is a resource allocation and deadlock avoidance algorithm that tests for safety by simulating the allocation for predetermined maximum possible amounts of all resources, then makes an “s-state” check to test for possible activities, before deciding whether allocation should be allowed to continue.</p>
-       
-      
-        <p>Why Bankers algorithm is named so? 
-            Bankers algorithm is named so because it is used in banking system to check whether loan can be sanctioned to a person or not. Suppose there are n number of account holders in a bank and the total sum of their money is S. If a person applies for a loan then the bank first subtracts the loan amount from the total money that bank has and if the remaining amount is greater than S then only the loan is sanctioned. It is done because if all the account holders comes to withdraw their money then the bank can easily do it.
-            In other words, the bank would never allocate its money in such a way that it can no longer satisfy the needs of all its customers. The bank would try to be in safe state always.
-            Following Data structures are used to implement the Banker s Algorithm:
-            Let n be the number of processes in the system and  m be the number of resources types.
-            <br>
-            <h2> Available :  </h2>
-             <p>
-            •	It is a 1-d array of size  m indicating the number of available resources of each type.
-            <br>
-            •	Available[ j ] = k means there are  k instances of resource type Rj
-            </p>
-           <h2> Max : </h2>
-             <p>
-            •	It is a 2-d array of size n*m  that defines the maximum demand of each process in a system.
-            <br>
-            •	Max[ i, j ] = k means process Pi may request at most k instances of resource type Rj.
-            </p>
-           <h2>Allocation : </h2> 
-             <p>
-            •	It is a 2-d array of size  n*m  that defines the number of resources of each type currently allocated to each process. <br>
-            •	Allocation[ i, j ] = k means process Pi is currently allocated  k  instances of resource type Rj 
-        </p>
-            <h2> Need : </h2>
-            <p> •	It is a 2-d array of size  n*m that indicates the remaining resource need of each process. <br>
-            •	Need [ i,   j ] = k means process Pi currently need k instances of resource type Rj
-•	Need [ i,   j ] = Max [ i,   j ]  Allocation [ i,   j ]
-            </p> 
-            </p>
+  <h1> <span class="multiText">Banker's algorithm </span>
+  </h1>
+  <p> The bankers algorithm is a resource allocation and deadlock avoidance algorithm that tests for safety by
+    simulating the allocation for predetermined maximum possible amounts of all resources, then makes an “s-state” check
+    to test for possible activities, before deciding whether allocation should be allowed to continue.</p>
 
-        <h2>Diagram</h2>
-    <img src="bankermindmap.png"  style="text-align: center; border-radius: 20px;  "  alt=""> 
-    <br><br>
-    <p>The first subtopic of "Banker's Algorithm" is "Resource Allocation", which is a first-level subtopic. It has two second-level subtopics, "Safe State" and "Unsafe State". "Safe State" and "Unsafe State" are both at the same level, but "Unsafe State" is further indented to indicate that it is a subtopic of "Resource Allocation".
 
-        Finally, "Unsafe State" has a third-level subtopic, "Deadlock Risk", which is further indented to indicate that it is a subtopic of "Unsafe State".</p>
-    <div class="accordion accordion-flush" id="accordionFlushExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingOne">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-              Characteristics
-            </button>
-          </h2>
-          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">The characteristics of Banker's algorithm are as follows: <br>
-                •	If any process requests for a resource, then it has to wait. <br>
-                •	This algorithm consists of advanced features for maximum resource allocation. <br>
-                •	There are limited resources in the system we have. <br>
-                •	In this algorithm, if any process gets all the needed resources, then it is that it should return the resources in a restricted period. <br>
-                •	Various resources are maintained in this algorithm that can fulfill the needs of at least one client. <br>
-                </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                Safety Algorithm
-              </button>
-            </h2>
-            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">It is a safety algorithm used to check whether or not a system is in a safe state or follows the safe sequence in a banker's algorithm: <br>
-                1. There are two vectors Work and Finish of length m and n in a safety algorithm.
-                Initialize: Work = Available <br>
-                Finish[i] = false; for I = 0, 1, 2, 3, 4… n - 1. <br>
-                2. Check the availability status for each type of resources [i], such as: <br>
-                Need[i] <= Work <br>
-                Finish[i] == false <br>
-                If the i does not exist, go to step 4.  <br>
-                3. Work = Work +Allocation(i) // to get new resource allocation  <br>
-                Finish[i] = true <br>
-                Go to step 2 to check the status of resource availability for the next process. <br>
-                4. If Finish[i] == true; it means that the system is safe for all processes.
-                </div>
-            </div>
-          </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingFour">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-              Advantages
-            </button>
-          </h2>
-          <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Following are the essential characteristics of the Banker's algorithm: <br>
-                1.	It contains various resources that meet the requirements of each process. <br>
-                2.	Each process should provide information to the operating system for upcoming resource requests, the number of resources, and how long the resources will be held. <br>
-                3.	It helps the operating system manage and control process requests for each type of resource in the computer system. <br>
-                4.	The algorithm has a Max resource attribute that represents indicates each process can hold the maximum number of resources in a system. <br>
-                </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-              Disadvantage
-            </button>
-          </h2>
-          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">1.	It requires a fixed number of processes, and no additional processes can be started in the system while executing the process. <br>
-                2.	The algorithm does no longer allows the processes to exchange its maximum needs while processing its tasks. <br>
-                3.	Each process has to know and state their maximum resource requirement in advance for the system. <br>
-                4.	The number of resource requests can be granted in a finite time, but the time limit for allocating the resources is one year. <br>
-                </div>
-          </div>
+  <p>Why Bankers algorithm is named so?
+    Bankers algorithm is named so because it is used in banking system to check whether loan can be sanctioned to a
+    person or not. Suppose there are n number of account holders in a bank and the total sum of their money is S. If a
+    person applies for a loan then the bank first subtracts the loan amount from the total money that bank has and if
+    the remaining amount is greater than S then only the loan is sanctioned. It is done because if all the account
+    holders comes to withdraw their money then the bank can easily do it.
+    In other words, the bank would never allocate its money in such a way that it can no longer satisfy the needs of all
+    its customers. The bank would try to be in safe state always.
+    Following Data structures are used to implement the Banker s Algorithm:
+    Let n be the number of processes in the system and m be the number of resources types.
+    <br>
+  <h2> Available : </h2>
+  <p>
+    • It is a 1-d array of size m indicating the number of available resources of each type.
+    <br>
+    • Available[ j ] = k means there are k instances of resource type Rj
+  </p>
+  <h2> Max : </h2>
+  <p>
+    • It is a 2-d array of size n*m that defines the maximum demand of each process in a system.
+    <br>
+    • Max[ i, j ] = k means process Pi may request at most k instances of resource type Rj.
+  </p>
+  <h2>Allocation : </h2>
+  <p>
+    • It is a 2-d array of size n*m that defines the number of resources of each type currently allocated to each
+    process. <br>
+    • Allocation[ i, j ] = k means process Pi is currently allocated k instances of resource type Rj
+  </p>
+  <h2> Need : </h2>
+  <p> • It is a 2-d array of size n*m that indicates the remaining resource need of each process. <br>
+    • Need [ i, j ] = k means process Pi currently need k instances of resource type Rj
+    • Need [ i, j ] = Max [ i, j ] Allocation [ i, j ]
+  </p>
+  </p>
+
+  <h2>Diagram</h2>
+  <img src="bankermindmap.png" style="text-align: center; border-radius: 20px;  " alt="">
+  <br><br>
+  <p>The first subtopic of "Banker's Algorithm" is "Resource Allocation", which is a first-level subtopic. It has two
+    second-level subtopics, "Safe State" and "Unsafe State". "Safe State" and "Unsafe State" are both at the same level,
+    but "Unsafe State" is further indented to indicate that it is a subtopic of "Resource Allocation".
+
+    Finally, "Unsafe State" has a third-level subtopic, "Deadlock Risk", which is further indented to indicate that it
+    is a subtopic of "Unsafe State".</p>
+  <div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+          Characteristics
+        </button>
+      </h2>
+      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">The characteristics of Banker's algorithm are as follows: <br>
+          • If any process requests for a resource, then it has to wait. <br>
+          • This algorithm consists of advanced features for maximum resource allocation. <br>
+          • There are limited resources in the system we have. <br>
+          • In this algorithm, if any process gets all the needed resources, then it is that it should return the
+          resources in a restricted period. <br>
+          • Various resources are maintained in this algorithm that can fulfill the needs of at least one client. <br>
         </div>
       </div>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script>
-        var typingEffect = new Typed(".multiText",{
-            strings : ["Banker's Algorithm" , "Banker's Algorithm", "Banker's Algorithm"],
-            loop : true,
-            typeSpeed:20,
-            backspeed : 40,
-            backDelay: 1400
-        }
-        )
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-     
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+          Safety Algorithm
+        </button>
+      </h2>
+      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">It is a safety algorithm used to check whether or not a system is in a safe state or
+          follows the safe sequence in a banker's algorithm: <br>
+          1. There are two vectors Work and Finish of length m and n in a safety algorithm.
+          Initialize: Work = Available <br>
+          Finish[i] = false; for I = 0, 1, 2, 3, 4… n - 1. <br>
+          2. Check the availability status for each type of resources [i], such as: <br>
+          Need[i] <= Work <br>
+            Finish[i] == false <br>
+            If the i does not exist, go to step 4. <br>
+            3. Work = Work +Allocation(i) // to get new resource allocation <br>
+            Finish[i] = true <br>
+            Go to step 2 to check the status of resource availability for the next process. <br>
+            4. If Finish[i] == true; it means that the system is safe for all processes.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingFour">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+          Advantages
+        </button>
+      </h2>
+      <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">Following are the essential characteristics of the Banker's algorithm: <br>
+          1. It contains various resources that meet the requirements of each process. <br>
+          2. Each process should provide information to the operating system for upcoming resource requests, the number
+          of resources, and how long the resources will be held. <br>
+          3. It helps the operating system manage and control process requests for each type of resource in the computer
+          system. <br>
+          4. The algorithm has a Max resource attribute that represents indicates each process can hold the maximum
+          number of resources in a system. <br>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+          Disadvantage
+        </button>
+      </h2>
+      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">1. It requires a fixed number of processes, and no additional processes can be
+          started in the system while executing the process. <br>
+          2. The algorithm does no longer allows the processes to exchange its maximum needs while processing its tasks.
+          <br>
+          3. Each process has to know and state their maximum resource requirement in advance for the system. <br>
+          4. The number of resource requests can be granted in a finite time, but the time limit for allocating the
+          resources is one year. <br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    var typingEffect = new Typed(".multiText", {
+      strings: ["Banker's Algorithm", "Banker's Algorithm", "Banker's Algorithm"],
+      loop: true,
+      typeSpeed: 20,
+      backspeed: 40,
+      backDelay: 1400
+    }
+    )
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+
   </div>
 </body>
+
 </html>
