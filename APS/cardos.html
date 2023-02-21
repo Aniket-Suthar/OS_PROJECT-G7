@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+    <link rel="icon" type="image/x-icon" href="HTM/img/logo4.jpg">
     <style>
       body{
         margin: 0%;
@@ -90,14 +91,14 @@
         padding: 20px;
 
         transform-style: preserve-3d;
-        backface-visibility: hidden;
+     
 }
 
 .card-content h2, .card-content p {
     margin: 0;
     padding: 0;
     transform-style: preserve-3d;
-    backface-visibility: hidden;
+  
    
 }
 
@@ -221,7 +222,7 @@ button{
         <div class="navbar">
           <ul>
             <li class="Text">OS VIRTUAL LAB</li>
-            <li><a href="#">Home</a></li>
+            <li><a href="mainpage.html">Home</a></li>
             <li><a href="#">About Us</a></li>
           </ul>
         </div>
@@ -253,8 +254,8 @@ button{
           </p>
           </div>
           <div class="buttonBlock">
-          <button class="btn btn-primary">EXPLORE</button>
-          <button class="btn btn-secondary">DEMO</button>
+            <a href="roundrobintext.html"><button  class="btn btn-primary">EXPLORE</button></a>
+          <a href="roundrobin.html"><button class="btn btn-secondary">SIMULATE</button></a>
            </div>
         </div>
       </div>
@@ -272,8 +273,8 @@ button{
             person or not.</p>
           </div>
             <div class="buttonBlock">
-          <button class="btn btn-primary">EXPLORE</button>
-          <button class="btn btn-secondary">DEMO</button>
+          <a href="Bankertext.html"><button  class="btn btn-primary">EXPLORE</button></a>
+          <a href="bankeralgonew.html"><button class="btn btn-secondary">SIMULATE</button></a>
         </div>
         </div>
       </div>
@@ -293,8 +294,8 @@ button{
           </p>
           </div>
           <div class="buttonBlock">
-            <button class="btn btn-primary">EXPLORE</button>
-          <button class="btn btn-secondary">DEMO</button>
+            <a href="Bankertext.html"><button  class="btn btn-primary">EXPLORE</button></a>
+            <a href="bankeralgonew.html"><button class="btn btn-secondary">SIMULATE</button></a>
         </div>
         </div>
       </div>
@@ -313,24 +314,11 @@ button{
           </p>
           </div>
           <div class="buttonBlock"></div>
-            <button class="btn btn-primary">EXPLORE</button>
-          <button class="btn btn-secondary">DEMO</button>
+          <a href="Bankertext.html"><button  class="btn btn-primary">EXPLORE</button></a>
+          <a href="bankeralgonew.html"><button class="btn btn-secondary">SIMULATE</button></a>
         </div>
         </div>
       </div>
     </div>
-      <script>
-        const cards = document.querySelectorAll('.card');
-
-cards.forEach(function(card) {
-  const btns = card.querySelectorAll('.btn');
-
-  btns.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      alert(`You clicked button ${btn.innerHTML} on card ${card.querySelector('h2').innerHTML}`);
-    });
-  });
-});
-      </script>
 </body>
 </html>

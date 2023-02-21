@@ -180,3 +180,11 @@ textarea {
   col:nth-child(even) {
     background:green;
   }
+
+  
+  .btn-primary {
+    height: 14px;
+    width: 88px;
+    background-color: #038129;
+    text-decoration: none;
+}
