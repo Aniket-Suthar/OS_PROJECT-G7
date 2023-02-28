@@ -372,61 +372,6 @@ function ExportToExcel(type, fn, dl) {
 function makechart() {
 
 
-    // Chart.defaults.font.family = "Lato";
-    // Chart.defaults.font.size = 18;
-    // Chart.defaults.color = "blue";
-
-
-    // let labels = ['Total_Remaining_A', 'Total_Remaining_B', 'Total_Remaining_C',
-    //     'Total_Allocated_A', 'Total_Allocated_B', 'Total_Allocates_C',
-    //     'Total_Maxneed_A', 'Total_Maxneed_B', 'Total_maxneed_C'
-    // ];
-    // const itemdata = [`${RsumA}`, `${RsumB}`, `${RsumC}`,
-    // `${AsumA}`, `${AsumB}`, `${AsumC}`,
-    // `${MsumA}`, `${MsumB}`, `${MsumC}`,
-    // ];
-
-    // const data = {
-    //     labels: labels,
-    //     datasets: [{
-    //         data: itemdata,
-    //         backgroundColor: ['rgb(255, 0, 0)', 'rgb(255,255,0)', 'rgb(96,186,45)',
-    //             'rgb(255, 0, 0)', 'rgb(255,255,0)', 'rgb(96,186,45)',
-    //             'rgb(255, 0, 0)', 'rgb(255,255,0)', 'rgb(96,186,45)'
-    //         ]
-    //     }]
-    // };
-
-    // const config = {
-    //     type: 'bar',
-    //     data: data,
-    //     options: {
-    //         plugins: {
-    //             legend: {
-    //                 display: false,
-    //                 labels: {
-    //                     color: 'rgb(255, 99, 132)'
-    //                 }
-
-    //             },
-    //             title: {
-    //                 display: true,
-    //                 text: 'CHART FOR TOTAL RESOURCE ALLOCATION',
-    //                 color: 'rgb(0,0,0)',
-    //                 font: {
-    //                     size: 20
-    //                 }
-    //             }
-    //         }
-    //     }
-    // };
-
-    // const chart = new Chart(
-    //     document.getElementById("mychart"),
-    //     config
-    // );
-
-
     var popCanvas = document.getElementById("popChart");
 
     Chart.defaults.font.family = "Lato";
