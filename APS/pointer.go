@@ -4,7 +4,6 @@ import "fmt"
 
 func main() {
 	fmt.Println("Pointers In GOLANG")
-
 	var pointer *int
 	fmt.Println("Without Initialisation , pointer is ", pointer)
 
