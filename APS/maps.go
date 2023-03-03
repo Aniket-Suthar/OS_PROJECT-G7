@@ -7,6 +7,8 @@ func main() {
 
 	//Defining a map
 	Roll_name := make(map[int]string)
+
+	//Adding values to the map
 	Roll_name[1] = "Aniket"
 	Roll_name[2] = "Prayag"
 	Roll_name[3] = "Jugal"
