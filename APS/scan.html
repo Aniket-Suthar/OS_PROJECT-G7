@@ -5,15 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SCAN</title>
-    <link rel="stylesheet" href="scan.css">
+    <link rel="stylesheet" href="cssA/scan.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> -->
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a class="Home" href="home page link">HOME</a></li>
+                <li><a class="Home" href="mainindex.html">HOME</a></li>
                 <li><a class="other" href="Explore">Explore</a></li>
-                <li><a class="other" href="About">About</a></li>
+                
             </ul>
         </nav>
     </header>
@@ -27,7 +28,7 @@
             <br>
             <div class="selectorcomb">
             <div >
-            <label for="scanOrscanC">choose Mathod:</label>
+            <label for="scanOrscanC">Choose Method:</label>
             <select name="algoselector" id="scanOrscanC" weidth="10">
                 <option value="scan">Scan</option>
                 <option value="scanc">C-Scan</option>
@@ -43,7 +44,7 @@
                 <div>
                 <label  for="total_tracks">Total Number Tracks:</label>
                 <br>
-                <input class="same" type="number" name="anynum" id="total_tracks"  maxlength="50" min="0" required autocomplete="off"  placeholder="Enter totaltracks">
+                <input class="same" type="number" name="anynum" id="total_tracks"  maxlength="50" min="0" required autocomplete="off"  placeholder="Enter total tracks">
                 </div>
                 <div>
                 <label  for="startingHead">Starting Position of Head:</label>
@@ -52,7 +53,7 @@
                 </div>
                 <div>
                 <label  for="timetakenPertrack">Time taken per track:</label>
-                <br><input class="same" type="number" name="anynum" id="timetakenPertrack"  min="0" required autocomplete="off"  placeholder="Enter timetaken/track">
+                <br><input class="same" type="number" name="anynum" id="timetakenPertrack"  min="0" required autocomplete="off"  placeholder="Enter time taken/track">
                 </div>
                 <div>
                     <label  for="Requested Tracks">Enter requested tracks:</label>
@@ -67,8 +68,8 @@
         </section>
         <section class="inputTable">
             <h2>Input Table</h2>
-            <h4>reqested tracks:</h4>
-            <table border="1" cellspacing="0" cellpadding="3" id = "inputtable">
+            <h3>Reqested tracks:</h3>
+            <table bordercolor="green" text-size="large" border="3" cellspacing="5" cellpadding="5" id = "inputtable">
                 
             </table>
         </section>
@@ -77,18 +78,18 @@
             <details>
                 <div class="detail">
                     <div>
-                <label for="trackstravelled">total tracks travelled:</label>
+                <label for="trackstravelled">Total tracks travelled:</label>
                 <input class="same" type="text" id="trackstravelled" readonly>
                 </div>
                 <br>
                 <div>
-                <label for="totaltime">total time taken :</label>
+                <label for="totaltime">Total time taken :</label>
                 <input class="same" type="text" id="totaltime" readonly>
                 </div>
             </div>
             </details>
-            <h4>processed tracks:</h4>
-            <table border="1" cellspacing="0" cellpadding="3" id = "outputtable">
+            <h4>Processed tracks:</h4>
+            <table bordercolor="red" border="3" cellspacing="4" cellpadding="4" id = "outputtable">
                 
             </table>
         </section>
@@ -100,6 +101,7 @@
             <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
         </svg>
     </div>
-    <script src = "scan.js">    </script>
+   
+    <script src = "scan.js"></script>
 </body>
 </html>

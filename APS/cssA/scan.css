@@ -1,7 +1,8 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing:border-box ;
+
+* {
+  margin: 3px;
+  padding: -12px;
+  box-sizing: border-box;
 }
 .Container{
   display: inline-block;
@@ -188,4 +189,10 @@ details{
 
 .custom-shape-divider-bottom-1678528431 .shape-fill {
   fill: #8eff03;
+}
+
+td {
+  display: table-cell;
+  vertical-align: inherit;
+
 }
