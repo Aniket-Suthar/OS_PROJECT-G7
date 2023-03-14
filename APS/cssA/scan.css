@@ -1,174 +1,214 @@
-
 * {
   margin: 3px;
   padding: -12px;
   box-sizing: border-box;
 }
-.Container{
+
+.Container {
   display: inline-block;
   padding: 2em;
   margin-top: 2em;
 }
-.Ctext{
+
+.Ctext {
   font-size: 2em;
   letter-spacing: 1px;
   border-right: 5px solid rgb(78, 77, 77);
   width: 100%;
-  white-space:nowrap;
+  white-space: nowrap;
   overflow: hidden;
-  animation: typing 2.5s,cursor 0.1s step-end infinite alternate;
+  animation: typing 2.5s, cursor 0.1s step-end infinite alternate;
 }
+
 /*cursor blinking*/
-@keyframes cursor{
-  100%{ border-color: transparent;}
+@keyframes cursor {
+  100% {
+    border-color: transparent;
+  }
 }
+
 @keyframes typing {
-  from{width: 0;}
+  from {
+    width: 0;
+  }
 }
-body{
+
+body {
   /* margin-top: 0.4em; */
-  font-family:  sans-serif;
+  font-family: sans-serif;
   background-color: #000000;
   text-align: center;
   color: rgb(255, 255, 255);
   overflow-x: hidden;
 }
-header{
+
+header {
   position: fixed;
   background-color: rgb(0, 0, 0);
   width: 100%;
   height: 3em;
- 
+
 }
-nav ul{
+
+nav ul {
   text-align: right;
   margin-top: 0.7em;
   margin-bottom: 0.5em;
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
-li{
+
+li {
   display: inline;
 }
-.other{
+
+.other {
   text-decoration: none;
-  padding:  0.3em 0.6em;
+  padding: 0.3em 0.6em;
   color: rgb(255, 255, 255);
   opacity: 0.8;
 }
-.other:hover{
+
+.other:hover {
   opacity: 1;
 }
-.Home{
+
+.Home {
   display: inline-flex;
   text-decoration: none;
-  padding:  0.3em 0.8em;
+  padding: 0.3em 0.8em;
   color: rgb(255, 255, 255);
   border-radius: 1em;
   font-weight: 550;
 }
-.Home:hover{
-  background-color: rgb(89,66,233);
+
+.Home:hover {
+  background-color: rgb(89, 66, 233);
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-span{
+
+span {
   color: #8eff03;
-  text-transform: uppercase; 
+  text-transform: uppercase;
 }
-.input{
+
+.input {
   text-align: left;
   margin-left: 2.1em;
   height: 31.5vw;
 }
-h2{
+
+h2 {
   font-family: sans-serif;
   font-size: 1.2em;
   background-color: #2360a5;
-  padding: .4em ;
+  padding: .4em;
   border-radius: 1em;
-  margin-bottom: 1em ;
+  margin-bottom: 1em;
   margin-top: 1em;
   color: #ffffff;
   /* float: left; */
   margin-right: 2em;
 }
-.inputsformat{
+
+.inputsformat {
   background-color: rgb(0, 136, 255);
 }
-.output, .inputTable{
+
+.output,
+.inputTable {
   text-align: left;
   margin-left: 2.1em;
   margin-bottom: 2em;
 }
-.selectorcomb{
+
+.selectorcomb {
   display: grid;
   grid-template-columns: 3fr 3fr;
   text-align: center;
-  font-size:large;
+  font-size: large;
 }
-.same{
- background-color:rgb(255, 255, 255);
- border-radius: .5em;
- padding: 0.3em;
- border-width:0;
- width:18em;
- font: inherit;
- margin-top: 0.4em;
+
+.same {
+  background-color: rgb(255, 255, 255);
+  border-radius: .5em;
+  padding: 0.3em;
+  border-width: 0;
+  width: 18em;
+  font: inherit;
+  margin-top: 0.4em;
 }
-div{
+
+div {
   padding: .4em;
 }
-select{
+
+select {
   width: 150px;
   height: 30px;
-  border-radius:.5em ;
-  font:700;
+  border-radius: .5em;
+  font: 700;
   word-spacing: 1em;
 }
-.buttons{
+
+.buttons {
   text-align: center;
   display: block;
   padding: 2em;
 }
-.b1, .b2{
-    width: 100px;
-    height: 30px;
-    border-radius: 0.3em;
-    border-width: 0;
-    background-color: rgb(89,66,233);
-    color: aliceblue;
-    font-size: medium;
-    font-weight:600 ;
-    position:sticky;
-    z-index: 1;
-}
-.b1{
-  margin-right: 6em;
+
+.b1,
+.b2 {
+  width: 144px;
+  height: 30px;
+  border-radius: 0.3em;
+  border-width: 0;
+  background-color: rgb(89, 66, 233);
+  color: aliceblue;
+  font-size: medium;
+  font-weight: 600;
+  position: sticky;
+  z-index: 1;
+  cursor: pointer;
 }
 
-.inputTable{
+.b2:hover{
+  background-color: rgb(246, 149, 65);
+}
+.b1:hover{
+  background-color: rgb(228, 145, 82);
+}
+
+.inputTable {
   display: flow-root;
 
 }
-h4{
+#myChart {
+  width: 500px;
+  height:300px;
+}
+h4 {
   margin-top: 1.7em;
   font-size: large;
 }
-details{
+
+details {
   display: inline-block;
   margin-top: 1.5em;
 }
 
-.detail div{
-    float: left;
-    display: grid;
-    font-size: large;
-    grid-template-columns: 1fr 1fr;
+.detail div {
+  float: left;
+  display: grid;
+  font-size: large;
+  grid-template-columns: 1fr 1fr;
 }
+
 .custom-shape-divider-bottom-1678528431 {
   position: absolute;
   bottom: 0;

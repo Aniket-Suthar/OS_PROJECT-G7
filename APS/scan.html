@@ -1,76 +1,94 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"
+	integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ=="
+	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SCAN</title>
     <link rel="stylesheet" href="cssA/scan.css">
+    <link rel="icon" type="image/x-icon" href="HTM/img/logo4.jpg">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> -->
 </head>
+
 <body>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <header>
         <nav>
             <ul>
-                <li><a class="Home" href="mainindex.html">HOME</a></li>
-                <li><a class="other" href="Explore">Explore</a></li>
-                
+                <li><a class="Home" href="cardos.html">HOME</a></li>
+                <li><a class="other" href="scantext.html">Explore</a></li>
+
             </ul>
         </nav>
     </header>
     <main>
-       
-            <div class="Container">
-            <p class="Ctext"><span> <strong> Scan and C-Scan Algorithm_</strong></span>Disc Scheduling.</p> 
-            </div>
-            <section class="input">
+
+        <div class="Container">
+            <p class="Ctext"><span> <strong> Scan and C-Scan Algorithm_</strong></span>Disc Scheduling.</p>
+        </div>
+        <section class="input">
             <h2 class="input_text">Inputs</h2>
             <br>
             <div class="selectorcomb">
-            <div >
-            <label for="scanOrscanC">Choose Method:</label>
-            <select name="algoselector" id="scanOrscanC" weidth="10">
-                <option value="scan">Scan</option>
-                <option value="scanc">C-Scan</option>
-            </select>
+                <div>
+                    <label for="scanOrscanC">Choose Method:</label>
+                    <select name="algoselector" id="scanOrscanC" weidth="10">
+                        <option value="scan">Scan</option>
+                        <option value="scanc">C-Scan</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="Selector">Track Selector:</label>
+                    <select name="TraclSelector" id="Selector" weidth="10">
+                        <option value="0">Larger</option>
+                        <option value="1">Smaller</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="total_tracks">Total Number Tracks:</label>
+
+                    <input class="same" type="number" name="anynum" id="total_tracks" maxlength="50" min="0" required
+                        autocomplete="off" placeholder="Enter total tracks">
+                </div>
+                <div>
+                    <label for="startingHead">Starting Position of Head:</label>
+
+                    <input class="same" type="number" name="anynum" id="startingHead" min="0" required
+                        autocomplete="off" placeholder="Enter Head to start">
+                </div>
+                <div>
+                    <label for="timetakenPertrack">Time taken per track:</label>
+                    <input class="same" type="number" name="anynum" id="timetakenPertrack" min="0" required
+                        autocomplete="off" placeholder="Enter time taken/track">
+                </div>
+                <div>
+                    <label for="Requested Tracks">Enter requested tracks:</label>
+                    <input class="same" type="number" name="anynum" id="Requested Tracks" min="0" required
+                        autocomplete="off" placeholder="Enter req. tracks">
+                </div>
+                <div>
+                    <label for="username">Enter the Filename :</label>
+
+                    <input class="same" id="user" type="text" placeholder="Enter the File name">
+                </div>
             </div>
-            <div >
-            <label for="Selector">track Selector:</label>
-            <select name="TraclSelector" id="Selector" weidth="10">
-                <option value="0">Larger</option>
-                <option value="1">Smaller</option>
-            </select>
-            </div>
-                <div>
-                <label  for="total_tracks">Total Number Tracks:</label>
-                <br>
-                <input class="same" type="number" name="anynum" id="total_tracks"  maxlength="50" min="0" required autocomplete="off"  placeholder="Enter total tracks">
-                </div>
-                <div>
-                <label  for="startingHead">Starting Position of Head:</label>
-                <br>
-                <input class="same" type="number" name="anynum" id="startingHead"  min="0" required autocomplete="off"  placeholder="Enter Head to start">
-                </div>
-                <div>
-                <label  for="timetakenPertrack">Time taken per track:</label>
-                <br><input class="same" type="number" name="anynum" id="timetakenPertrack"  min="0" required autocomplete="off"  placeholder="Enter time taken/track">
-                </div>
-                <div>
-                    <label  for="Requested Tracks">Enter requested tracks:</label>
-                   <br> <input class="same" type="number" name="anynum" id="Requested Tracks"  min="0" required autocomplete="off"  placeholder="Enter req. tracks">
-                </div>
-        </div>
-        <section class="buttons">
-            <button class="b1" id = "addTrackBtn">Add Track</button>
-            <button class="b2" id = "executeButton">Execute</button>
-            <!-- <input type="number" name="anynum" id="trackSelect"  min="0" required autocomplete="off"  placeholder="for large:0 small:1"> -->
-        </section>
+            <section class="buttons">
+                <button class="b1" id="addTrackBtn">Add Track</button>
+                <button class="b2" id="executeButton">Execute</button>
+                <button class="b2" id="excel" onclick="ExportToExcel('xlsx')">Export to
+                    excel</button>
+                <!-- <input type="number" name="anynum" id="trackSelect"  min="0" required autocomplete="off"  placeholder="for large:0 small:1"> -->
+            </section>
         </section>
         <section class="inputTable">
             <h2>Input Table</h2>
             <h3>Reqested tracks:</h3>
-            <table bordercolor="green" text-size="large" border="3" cellspacing="5" cellpadding="5" id = "inputtable">
-                
+            <table bordercolor="green" text-size="large" border="3" cellspacing="5" cellpadding="5" id="inputtable">
+
             </table>
         </section>
         <section class="output">
@@ -78,30 +96,69 @@
             <details>
                 <div class="detail">
                     <div>
-                <label for="trackstravelled">Total tracks travelled:</label>
-                <input class="same" type="text" id="trackstravelled" readonly>
+                        <label for="trackstravelled">Total tracks travelled:</label>
+                        <input class="same" type="text" id="trackstravelled" readonly>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="totaltime">Total time taken :</label>
+                        <input class="same" type="text" id="totaltime" readonly>
+                    </div>
                 </div>
-                <br>
-                <div>
-                <label for="totaltime">Total time taken :</label>
-                <input class="same" type="text" id="totaltime" readonly>
-                </div>
-            </div>
             </details>
             <h4>Processed tracks:</h4>
-            <table bordercolor="red" border="3" cellspacing="4" cellpadding="4" id = "outputtable">
-                
+            <table bordercolor="red" border="3" cellspacing="4" cellpadding="4" id="outputtable">
+
             </table>
+            <button class="btn btn-warning add-btn" id="toggle"">Chart Divison</button>
+          
+
+            <div style="width: 900px; height:500px; color:black;border:3px solid black;" id="chd">
+				<button class="btn btn-warning add-btn" id="chart" onclick="makechart()">Get Chart</button>
+				<canvas id="popChart"></canvas>
+			</div>
+        
         </section>
     </main>
     <div class="custom-shape-divider-bottom-1678528431">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
-            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
-            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+            <path
+                d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                opacity=".25" class="shape-fill"></path>
+            <path
+                d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                opacity=".5" class="shape-fill"></path>
+            <path
+                d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+                class="shape-fill"></path>
         </svg>
     </div>
-   
-    <script src = "scan.js"></script>
+
+
+    <script src="scan.js"></script>
+
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+    <script type=" text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+        
+			<script>
+				const targetDiv = document.getElementById("chd");
+				const btn = document.getElementById("toggle");
+				btn.onclick = function () {
+					if (targetDiv.style.display !== "none") {
+						targetDiv.style.display = "none";
+					} else {
+						targetDiv.style.display = "block";
+					}
+				};
+			</script>
+        
 </body>
+
 </html>
